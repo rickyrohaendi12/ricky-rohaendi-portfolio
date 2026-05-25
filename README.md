@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website!
 This project showcases my journey as a developer & designer through modern web experiences, UI/UX exploration, and real-world projects.
 
-🌐 Live Website: [Ricky Rohaendi Portfolio](https://ricky-rohaendi-portfolio.vercel.app/?utm_source=chatgpt.com)
+🌐 Live Website: [Ricky Rohaendi Portfolio](https://ricky-rohaendi-portfolio.vercel.app)
 
 ## ✨ About
 
