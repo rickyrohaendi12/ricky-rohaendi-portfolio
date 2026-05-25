@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "e-commerce",
-    title: "E-Commerce Website - Full-Stack Development & UI/UX Design",
+    title: "E-Commerce Website - Front-End Development & UI/UX Design",
     category: "dual",
     tags: ["React", "Node.js", "JavaScript", "E-Commerce"],
     description:
