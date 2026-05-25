@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", var(--font-sans);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer utilities {
+  /* Dynamic custom scrollbar and aesthetics */
+  ::selection {
+    background-color: rgba(168, 85, 247, 0.3);
+    color: inherit;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0A0A0B;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Styles built around the new Vibrant theme */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark .glass-panel {
+  background-color: rgba(10, 10, 11, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Interactive Design Grid Accent background */
+.dot-grid {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(147, 51, 234, 0.1) 1px, transparent 1px);
+}
+
+.dark .dot-grid {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+}
+
+

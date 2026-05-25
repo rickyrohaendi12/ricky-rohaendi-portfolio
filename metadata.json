@@ -1,0 +1,6 @@
+{
+  "name": "Design & Engineering Portfolio",
+  "description": "A modern, highly animated portfolio website for a professional UI/UX Designer and Software Engineer with an interactive Design-to-Code sandbox.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
