@@ -270,7 +270,7 @@ export default function Projects() {
                     <div className="space-y-3">
                       <h5 className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
                         <Code2 className="w-3.5 h-3.5 text-purple-400" />
-                        Spesifikasi Teknologi / Tools
+                        Technical Specifications / Tools
                       </h5>
                       <div className="flex flex-wrap gap-1.5">
                         {selectedProject.tags.map((tag) => (
@@ -287,7 +287,7 @@ export default function Projects() {
                     {/* KEY DELIVERABLES / OUTCOMES LIST */}
                     <div className="space-y-3 pt-2">
                       <h5 className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">
-                        Hasil & Serahan Utama
+                        Key Results & Deliverables
                       </h5>
                       <div className="grid grid-cols-1 gap-2.5">
                         {selectedProject.deliverables.map((out) => (

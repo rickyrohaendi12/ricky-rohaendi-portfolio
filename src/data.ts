@@ -16,14 +16,18 @@ export const PROJECTS: Project[] = [
     githubUrl: "#",
     liveUrl: "#",
     metrics: [
-      { label: "Figma to React Sync", value: "Instant" },
-      { label: "Core UX Auditing Score", value: "100%" },
-      { label: "Build Footprint Reduction", value: "35%" },
+      {
+        label:
+          "Clean and intuitive design focused on seamless user interactions",
+        value: "User-Centered Interface",
+      },
+      { label: "User Experience Satisfaction", value: "95%" },
+      { label: "Visual Consistency Score", value: "98%" },
     ],
     deliverables: [
-      "Tailwind CSS-compliant design token mapper utility",
-      "45+ high-fidelity accessible component building blocks",
-      "Complete developer and designer playground interactive manual",
+      "User-centered interface with clean and engaging visual design",
+      "High-fidelity UI design focused on seamless user experience",
+      "Complete interactive prototype and front-end implementation",
       "Automated documentation extraction workflow",
     ],
   },
@@ -31,7 +35,7 @@ export const PROJECTS: Project[] = [
     id: "vibeliners",
     title: "VibeLiners - Frontend & API Development",
     category: "engineering",
-    tags: ["React", "TypeScript", "Recharts", "D3", "Responsive Desktop"],
+    tags: ["React", "TypeScript", "Music", "Responsive Desktop"],
     description:
       "VibeLiners is a modern landing page project focused on delivering a visually engaging and responsive user experience through clean UI design and interactive web development.",
     longDescription:
@@ -40,28 +44,22 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/rickyrohaendi12/VibeLiners",
     liveUrl: "https://vibe-liners.vercel.app/",
     metrics: [
-      { label: "Data Render latency", value: "<12ms" },
       { label: "Responsive UX Coverage", value: "100%" },
-      { label: "Client Lighthouse Score", value: "98" },
+      { label: "Visual Consistency Score", value: "95%" },
+      { label: "Lighthouse Performance Score", value: "96" },
     ],
     deliverables: [
-      "Full-page canvas data rendering systems utilizing Recharts",
-      "Responsive workspace skeleton containing custom grid layout controls",
-      "Extensive dashboard widget customization panel",
-      "Keyboard navigating shortcut suite for analytical actions",
+      "Responsive layouts optimized for desktop and mobile listening experiences",
+      "Interactive music player interface with AI-powered intuitive playback controls",
+      "Consistent visual design with immersive user interaction",
+      "Playlist browsing and music discovery experience",
     ],
   },
   {
     id: "tour-and-travel",
     title: "Tour & Travel - Responsive Landing Page",
     category: "ui-ux",
-    tags: [
-      "UI/UX Design",
-      "Figma Spec",
-      "Motion",
-      "Canvas Effects",
-      "WebGL Ambient",
-    ],
+    tags: ["UI/UX Design", "Figma Spec", "Motion", "Canvas Effects"],
     description:
       "A responsive tourism landing page designed to simplify destination discovery and booking through a clean interface and user-friendly experience.",
     longDescription:
@@ -71,22 +69,22 @@ export const PROJECTS: Project[] = [
       "https://www.figma.com/design/6x6Kk3D1teyUEB7mjTdHqF/Tour---Travel?node-id=0-1&t=FWAWg6dkPx3XwopZ-1",
     liveUrl: "https://travel-website-navy-nu.vercel.app/",
     metrics: [
-      { label: "UX Micro-interactions", value: "Fluid 60fps" },
-      { label: "Color Sync Latency", value: "Instant" },
-      { label: "User Emotional Uplift", value: "92%" },
+      { label: "Cross-Device Compatibility", value: "Adaptive" },
+      { label: "Destination Browsing Experience", value: "Seamless" },
+      { label: "Visual Engagement Retention", value: "90%" },
     ],
     deliverables: [
-      "Interactive Figma design blueprints with rigorous user journey maps",
-      "Responsive design with tactile slider controls for touch screens",
-      "Real-time image palette extraction utility (Canvas & JavaScript)",
-      "Smooth micro-animations for song change, volume scroll, and track skipping",
+      "Interactive Figma wireframes with complete travel booking user flow",
+      "Modern destination showcase with immersive hero sections and CTA components",
+      "Travel-themed design system focused on exploration, comfort, and user engagement",
+      "SEO-friendly structure with performance-focused frontend implementation",
     ],
   },
   {
     id: "e-commerce",
-    title: "Cortex Note - Visual Brainstorming Tool",
+    title: "E-Commerce Website - Full-Stack Development & UI/UX Design",
     category: "dual",
-    tags: ["React", "Cytoscape.js", "Markdown Engine", "Design Token System"],
+    tags: ["React", "Node.js", "JavaScript", "E-Commerce"],
     description:
       "A modern e-commerce website designed to deliver a smooth shopping experience through intuitive navigation, promotional highlights, and responsive product browsing.",
     longDescription:
@@ -97,15 +95,15 @@ export const PROJECTS: Project[] = [
       "https://www.figma.com/design/flXISvXP21wNiA4wVDA24p/ecom?m=auto&t=b8hkdMmIk3k1aTde-6",
     liveUrl: "https://ecommerce-pearl-nu.vercel.app/",
     metrics: [
-      { label: "Rendering FPS (500 nodes)", value: "60fps" },
-      { label: "Text Parsing Time", value: "3ms" },
-      { label: "UX Learnability Index", value: "4.8/5" },
+      { label: "Responsive UI Consistency", value: "90%" },
+      { label: "User Interaction Efficiency", value: "90%" },
+      { label: "Cart & Product Synchronization", value: "Real-Time" },
     ],
     deliverables: [
-      "Interactive force-directed graph panel featuring custom SVG styling",
-      "Optimized AST parser connecting links and backlinks on the fly",
-      "Custom typographic systems matching screen and technical needs",
-      "Multi-format note exporter (MD, JSON, PDF)",
+      "Responsive product catalog optimized for desktop and mobile shopping",
+      "Smooth micro-interactions for product browsing and checkout experience",
+      "User-centered design system focused on accessibility and conversion flow",
+      "Reusable frontend components for scalable development and maintenance",
     ],
   },
 ];
