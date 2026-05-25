@@ -10,7 +10,7 @@ export const PROJECTS: Project[] = [
       "Feelsbox is a digital product focused on creating a simple and engaging user experience through modern UI/UX design and responsive web development.",
     longDescription:
       "Feelsbox is a web-based digital product designed with a user-centered approach to deliver a clean, intuitive, and visually engaging experience. The project involved translating ideas into wireframes, designing modern interfaces in Figma, and implementing responsive layouts with Laravel. The focus was on usability, visual consistency, and creating a seamless experience across devices while maintaining a strong and appealing product identity.",
-    image: "/public/img/feelsbox.png",
+    image: "/img/feelsbox.png",
     figmaUrl:
       "https://www.figma.com/design/UjnMP2Mjo1kpfNa9tA0WDv/Feelsbox?m=auto&t=b8hkdMmIk3k1aTde-6",
     githubUrl: "#",
@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
       "VibeLiners is a modern landing page project focused on delivering a visually engaging and responsive user experience through clean UI design and interactive web development.",
     longDescription:
       "VibeLiners is a web-based landing page project designed to present a bold and modern digital experience with a strong visual identity. The project focused on creating an intuitive user flow, clean interface layouts, and responsive interactions across desktop and mobile devices. Starting from UI exploration in Figma to front-end implementation, the goal was to combine visual consistency, usability, and engaging web interactions to create a seamless and memorable user experience. The development process involved translating design concepts into React components, implementing interactive data visualizations with Recharts and D3, and optimizing performance for smooth user interactions.",
-    image: "/public/img/vibeliners.png",
+    image: "/img/vibeliners.png",
     githubUrl: "https://github.com/rickyrohaendi12/VibeLiners",
     liveUrl: "https://vibe-liners.vercel.app/",
     metrics: [
@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
       "A responsive tourism landing page designed to simplify destination discovery and booking through a clean interface and user-friendly experience.",
     longDescription:
       "A web-based tourism landing page created to provide a seamless experience for users exploring destinations and planning trips. The design focused on intuitive navigation, destination discovery, and a simple booking flow supported by a clean visual layout and responsive interface. From UI design in Figma to front-end development, the project emphasized usability, visual consistency, and creating an engaging digital experience across desktop and mobile devices.",
-    image: "/public/img/t&t.png",
+    image: "/img/t&t.png",
     figmaUrl:
       "https://www.figma.com/design/6x6Kk3D1teyUEB7mjTdHqF/Tour---Travel?node-id=0-1&t=FWAWg6dkPx3XwopZ-1",
     liveUrl: "https://travel-website-navy-nu.vercel.app/",
@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
       "A modern e-commerce website designed to deliver a smooth shopping experience through intuitive navigation, promotional highlights, and responsive product browsing.",
     longDescription:
       "A web-based e-commerce platform designed to provide users with a seamless and engaging online shopping experience. The project focused on building intuitive product navigation, promotional sections such as flash sales and featured banners, and a clean product catalog layout to improve browsing and purchasing flow. From UI design to front-end implementation, the website was developed with a user-centered approach, emphasizing visual consistency, responsiveness, and an efficient shopping experience across devices.",
-    image: "/public/img/saas.png",
+    image: "/img/saas.png",
     githubUrl: "https://github.com/kooo-design/ecommerce",
     figmaUrl:
       "https://www.figma.com/design/flXISvXP21wNiA4wVDA24p/ecom?m=auto&t=b8hkdMmIk3k1aTde-6",
