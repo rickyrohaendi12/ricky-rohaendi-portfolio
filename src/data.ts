@@ -115,7 +115,7 @@ export const PROJECTS: Project[] = [
       "A modern mobile application designed to provide a seamless and engaging user experience with intuitive navigation, personalized content, and responsive interactions.",
     longDescription:
       "A mobile application designed to provide users with a seamless and engaging experience. The project focused on building intuitive navigation, personalized content delivery, and responsive interactions to improve user engagement and satisfaction. From UI design to front-end implementation, the app was developed with a user-centered approach, emphasizing visual consistency, responsiveness, and an efficient user experience across devices.",
-    image: "/public/img/fortex.png",
+    image: "/img/fortex.png",
     githubUrl: "https://github.com/rickyrohaendi12/react-native-firebase-suite",
     liveUrl: "#",
     metrics: [
