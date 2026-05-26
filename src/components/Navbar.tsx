@@ -101,9 +101,9 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
             aria-label="Toggle theme color"
           >
             {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-amber-400" />
+              <Moon className="w-4 h-4 text-indigo-400" />
             ) : (
-              <Moon className="w-4 h-4 text-indigo-600" />
+              <Sun className="w-4 h-4 text-amber-400" />
             )}
           </button>
 
