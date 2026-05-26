@@ -106,6 +106,29 @@ export const PROJECTS: Project[] = [
       "Reusable frontend components for scalable development and maintenance",
     ],
   },
+  {
+    id: "fortex-mobile",
+    title: "Fortex Mobile App - UI/UX Design & Front-End Development",
+    category: "engineering",
+    tags: ["React Native", "TypeScript", "Mobile App"],
+    description:
+      "A modern mobile application designed to provide a seamless and engaging user experience with intuitive navigation, personalized content, and responsive interactions.",
+    longDescription:
+      "A mobile application designed to provide users with a seamless and engaging experience. The project focused on building intuitive navigation, personalized content delivery, and responsive interactions to improve user engagement and satisfaction. From UI design to front-end implementation, the app was developed with a user-centered approach, emphasizing visual consistency, responsiveness, and an efficient user experience across devices.",
+    image: "/public/img/fortex.png",
+    githubUrl: "https://github.com/rickyrohaendi12/react-native-firebase-suite",
+    liveUrl: "#",
+    metrics: [
+      { label: "Responsive UI Consistency", value: "90%" },
+      { label: "User Interaction Efficiency", value: "90%" },
+      { label: "Firebase Integration", value: "Real-Time" },
+    ],
+    deliverables: [
+      "Firebase-powered mobile app with real-time data synchronization and user authentication",
+      "CRUD operations for dynamic content management and user interactions",
+      "Register account, login/logout, and personalized user experience features",
+    ],
+  },
 ];
 
 export const SKILLS: Skill[] = [
