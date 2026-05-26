@@ -29,13 +29,13 @@ export default function Contact() {
 
   // REAL TIME STATUS CUE
   const getStatusMessage = () => {
-    if (activeInput === "name") return "Mengetik nama lengkap Anda...";
-    if (activeInput === "email") return "Memastikan format email valid...";
+    if (activeInput === "name") return "Typing your full name...";
+    if (activeInput === "email") return "Verifying email format...";
     if (activeInput === "message")
-      return "Menulis deskripsi kolaborasi atau sapaan...";
+      return "Writing collaboration description or greeting...";
     if (formData.name && formData.email && formData.message)
-      return "Semua kolom terisi! Siap kirim berkas.";
-    return "Menunggu input kolaborasi Anda...";
+      return "All fields filled! Ready to submit.";
+    return "We look forward to your input on this collaboration...";
   };
 
   const handleFocus = (field: string) => setActiveInput(field);
@@ -201,7 +201,7 @@ export default function Contact() {
                     htmlFor="contact-name"
                     className="block text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider pl-1"
                   >
-                    Nama Lengkap
+                    Full Name
                   </label>
                   <input
                     id="contact-name"
@@ -213,7 +213,7 @@ export default function Contact() {
                     onFocus={() => handleFocus("name")}
                     onBlur={handleBlur}
                     className="w-full px-4 py-3 rounded-xl border border-purple-500/20 bg-purple-950/15 text-white text-sm focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 transition-all font-sans"
-                    placeholder="Contoh: Ricky Rohaendi"
+                    placeholder="Example: Ricky Rohaendi"
                   />
                 </div>
 
@@ -223,7 +223,7 @@ export default function Contact() {
                     htmlFor="contact-email"
                     className="block text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider pl-1"
                   >
-                    Surel / Email Address
+                    Email Address
                   </label>
                   <input
                     id="contact-email"
@@ -235,7 +235,7 @@ export default function Contact() {
                     onFocus={() => handleFocus("email")}
                     onBlur={handleBlur}
                     className="w-full px-4 py-3 rounded-xl border border-purple-500/20 bg-purple-950/15 text-white text-sm focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 transition-all font-sans"
-                    placeholder="Contoh: ricky@rohaendi.com"
+                    placeholder="Example: ricky@rohaendi.com"
                   />
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function Contact() {
                   htmlFor="contact-project-type"
                   className="block text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider pl-1 font-sans"
                 >
-                  Jenis Kolaborasi / Kebutuhan
+                  Project Type / Requirements
                 </label>
                 <div className="relative">
                   <select
@@ -266,19 +266,19 @@ export default function Contact() {
                       value="ui-ux"
                       className="font-sans text-slate-900 bg-white"
                     >
-                      Hanya Detail UI/UX Figma Design
+                      Figma UI/UX Design Details Only
                     </option>
                     <option
                       value="engineering"
                       className="font-sans text-slate-900 bg-white"
                     >
-                      Hanya React / TypeScript Engineering
+                      React / TypeScript Engineering Only
                     </option>
                     <option
                       value="other"
                       className="font-sans text-slate-900 bg-white"
                     >
-                      Konsultasi / Tawaran Lainnya
+                      Consultation / Other Offers
                     </option>
                   </select>
                   <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400">
@@ -293,7 +293,7 @@ export default function Contact() {
                   htmlFor="contact-message"
                   className="block text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider pl-1"
                 >
-                  Deskripsi Singkat / Pesan Anda
+                  Brief Description / Your Message
                 </label>
                 <textarea
                   id="contact-message"
@@ -305,7 +305,7 @@ export default function Contact() {
                   onFocus={() => handleFocus("message")}
                   onBlur={handleBlur}
                   className="w-full px-4 py-3 rounded-xl border border-purple-500/20 bg-purple-950/15 text-white text-sm focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 transition-all font-sans leading-relaxed"
-                  placeholder="Ceritakan gambaran singkat ide produk atau kebutuhan sistem modular Anda disini..."
+                  placeholder="Tell us a brief overview of your product idea or modular system requirements here..."
                 />
               </div>
 
@@ -323,16 +323,16 @@ export default function Contact() {
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2 font-mono text-xs">
                     <span className="w-3.5 h-3.5 rounded-full border-2 border-dashed border-white animate-spin" />
-                    Memproses Pengiriman...
+                    Processing Submission...
                   </span>
                 ) : isSuccess ? (
                   <span className="flex items-center justify-center gap-1.5">
                     <CheckCircle2 className="w-5 h-5 text-white bg-transparent" />
-                    Pesan Berhasil Dikirimkan!
+                    Message Sent Successfully!
                   </span>
                 ) : (
                   <span className="flex items-center justify-center gap-2">
-                    Kirim Pesan Kolaborasi
+                    Send Collaboration Message
                     <Send className="w-4 h-4 text-white hover:translate-x-0.5 transition-transform" />
                   </span>
                 )}
@@ -349,9 +349,9 @@ export default function Contact() {
                 >
                   <p className="flex items-center gap-2 font-display">
                     <Sparkles className="w-4 h-4 text-emerald-405 animate-pulse shrink-0" />
-                    Terima kasih atas minat Anda! Kontak simulasi terkirim
-                    dengan sukses. Saya akan menghubungi surel Anda kembali
-                    secepatnya.
+                    Thank you for your interest! The simulation contact has been
+                    sent successfully. I will reach out to your email as soon as
+                    possible.
                   </p>
                 </motion.div>
               )}
