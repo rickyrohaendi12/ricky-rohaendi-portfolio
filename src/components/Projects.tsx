@@ -40,8 +40,8 @@ export default function Projects() {
               Portfolio & Works Gallery
             </h2>
             <p className="text-slate-600 dark:text-slate-350 max-w-lg text-sm sm:text-base leading-relaxed">
-              Koleksi proyek terpilih yang mengawinkan seni komposisi visual
-              intuitif dan keahlian rekayasa sirkuit kode.
+              A collection of selected projects that blend the art of intuitive
+              visual composition with expertise in circuit design.
             </p>
           </div>
 
