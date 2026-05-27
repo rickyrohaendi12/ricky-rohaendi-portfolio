@@ -86,8 +86,9 @@ export default function Hero({ onNavigate }: HeroProps) {
             variants={itemVariants}
             className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed"
           >
-            Bringing the perfect harmony between the pixel-perfect aesthetics of
-            the visual kit and the reliability of reactive code. As a {""}
+            Hi, I’m Ricky Rohaendi—Bringing the perfect harmony between the
+            pixel-perfect aesthetics of the visual kit and the reliability of
+            reactive code. As a {""}
             <strong>UI/UX Designer</strong> & <strong>Software Engineer</strong>
             , I don’t just design things that look good; I also ensure optimal
             performance across every platform.
