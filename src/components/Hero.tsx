@@ -88,9 +88,9 @@ export default function Hero({ onNavigate }: HeroProps) {
           >
             Hi, I’m Ricky Rohaendi as a {""}
             <strong>UI/UX Designer</strong> & <strong>Software Engineer</strong>
-            focused on bringing pixel-perfect aesthetics together with reliable
-            reactive code—creating digital experiences that not only look great,
-            but also perform seamlessly across every platform.
+            , focused on bringing pixel-perfect aesthetics together with
+            reliable reactive code—creating digital experiences that not only
+            look great, but also perform seamlessly across every platform.
           </motion.p>
 
           {/* CTA ACTIONS */}
