@@ -50,9 +50,11 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
           onClick={() => handleItemClick("hero")}
           className="flex items-center gap-2 group cursor-pointer text-left focus:outline-none"
         >
-          <div className="w-9 h-9 rounded-xl bg-indigo-600 dark:bg-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
-            <span className="font-display">R</span>
-          </div>
+          <img
+            src="/img/logo.png"
+            alt="Ricky Rohaendi Logo"
+            className="w-9 h-9 rounded-[15px] object-cover shadow-sm group-hover:scale-105 transition-transform"
+          />
           <div className="hidden sm:block">
             <h1 className="font-display font-bold text-sm tracking-wide text-slate-900 dark:text-white leading-tight">
               Ricky Rohaendi
