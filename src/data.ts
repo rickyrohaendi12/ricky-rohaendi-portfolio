@@ -129,6 +129,28 @@ export const PROJECTS: Project[] = [
       "Register account, login/logout, and personalized user experience features",
     ],
   },
+  {
+    id: "wc-2026",
+    title: "World Cup 2026 Website - UI/UX Design & Front-End Development",
+    category: "dual",
+    tags: ["React", "TypeScript", "Web App"],
+    description:
+      "A modern web application designed to provide a seamless and engaging user experience with intuitive navigation, personalized content, and responsive interactions.",
+    longDescription:
+      "A web application designed to provide users with a seamless and engaging experience. The project focused on building intuitive navigation, personalized content delivery, and responsive interactions to improve user engagement and satisfaction. From UI design to front-end implementation, the app was developed with a user-centered approach, emphasizing visual consistency, responsiveness, and an efficient user experience across devices.",
+    image: "/img/wc.png",
+    githubUrl: "https://github.com/rickyrohaendi12/world-cup-2026",
+    liveUrl: "https://world-cup-2026-coral-seven.vercel.app/",
+    metrics: [
+      { label: "Responsive UI Consistency", value: "90%" },
+      { label: "User Interaction Efficiency", value: "90%" },
+    ],
+    deliverables: [
+      "Interactive live score dashboard with real-time match simulation system",
+      "AI-powered tactical analysis panel for match prediction and squad insights",
+      "Responsive multi-section interface including schedules, standings, squads, and live events tracking",
+    ],
+  },
 ];
 
 export const SKILLS: Skill[] = [
