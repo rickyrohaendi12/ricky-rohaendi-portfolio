@@ -237,7 +237,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                     <div className="space-y-3">
                       <div className="overflow-hidden rounded-[20px] border border-stone-300/70 bg-stone-200/70 dark:border-stone-700 dark:bg-stone-800 shadow-sm">
                         <img
-                          src="/public/img/ricky.jpg"
+                          src="/img/ricky.jpg"
                           alt="Ricky Rohaendi"
                           referrerPolicy="no-referrer"
                           className="w-full h-36 object-cover object-top"
@@ -245,7 +245,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                         <div className="p-3 flex items-center gap-3">
                           <div className="relative shrink-0">
                             <img
-                              src="/public/img/ricky.jpg"
+                              src="/img/ricky.jpg"
                               alt="Ricky Rohaendi"
                               referrerPolicy="no-referrer"
                               className="w-9 h-9 rounded-full border border-stone-300/70 bg-stone-200/70 dark:border-stone-700 dark:bg-stone-800 object-cover"
