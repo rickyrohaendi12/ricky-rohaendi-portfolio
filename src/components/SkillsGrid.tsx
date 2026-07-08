@@ -36,16 +36,16 @@ export default function SkillsGrid() {
   return (
     <section
       id="skills"
-      className="py-24 bg-transparent border-t border-purple-500/10 relative overflow-hidden transition-colors"
+      className="py-24 bg-transparent border-t border-stone-300/70 dark:border-stone-800 relative overflow-hidden transition-colors"
     >
       {/* Background soft glowing lights */}
-      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-stone-300/30 dark:bg-stone-800/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* SECTION HEADER */}
         <div className="flex flex-col items-start gap-3 mb-16 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/20 text-purple-300 font-mono text-xs font-semibold">
-            <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-300/80 bg-stone-100/80 text-stone-700 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-stone-300 font-mono text-xs font-semibold">
+            <Cpu className="w-3.5 h-3.5 text-stone-500 dark:text-stone-400" />
             <span>Skills & Tools</span>
           </div>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
@@ -65,7 +65,7 @@ export default function SkillsGrid() {
             {/* COLUMN: UI & DESIGN SPECIFICATION */}
             <div className="space-y-4">
               <h3 className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest text-left flex items-center gap-2 pl-2">
-                <Palette className="w-4 h-4 text-purple-400" />
+                <Palette className="w-4 h-4 text-stone-500 dark:text-stone-400" />
                 Design & UX Architecture
               </h3>
 
@@ -81,8 +81,8 @@ export default function SkillsGrid() {
                       onClick={() => setActiveSkillId(skill.id)}
                       className={`group p-5 rounded-2xl border transition-all cursor-pointer relative ${
                         isSelected
-                          ? "bg-zinc-950 border-cyan-400 ring-1 ring-cyan-400 shadow-md shadow-cyan-500/10"
-                          : "bg-zinc-900/30 border-purple-500/15 hover:bg-zinc-900/60"
+                          ? "bg-stone-100 border-stone-400 ring-1 ring-stone-400 shadow-sm dark:bg-zinc-950 dark:border-stone-500 dark:ring-stone-500"
+                          : "bg-white/70 border-stone-300/70 hover:bg-stone-100/80 dark:bg-zinc-900/30 dark:border-stone-700/70 dark:hover:bg-zinc-900/60"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -91,14 +91,14 @@ export default function SkillsGrid() {
                           <div
                             className={`p-2.5 rounded-xl transition-colors ${
                               isSelected
-                                ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white"
-                                : "bg-purple-950/30 text-cyan-300 group-hover:bg-purple-950/50"
+                                ? "bg-stone-800 text-white dark:bg-stone-200 dark:text-stone-900"
+                                : "bg-stone-100 text-stone-700 group-hover:bg-stone-200 dark:bg-stone-900/60 dark:text-stone-300 dark:group-hover:bg-stone-800/70"
                             }`}
                           >
                             <IconComp className="w-4.5 h-4.5" />
                           </div>
                           <div>
-                            <h4 className="font-display font-bold text-sm text-white group-hover:text-cyan-400 transition-colors">
+                            <h4 className="font-display font-bold text-sm text-stone-900 dark:text-white group-hover:text-stone-700 dark:group-hover:text-stone-300 transition-colors">
                               {skill.name}
                             </h4>
                             <p className="text-slate-400 text-xs mt-0.5 max-w-[200px] sm:max-w-none line-clamp-1">
@@ -109,7 +109,7 @@ export default function SkillsGrid() {
 
                         {/* SKILL STAT METRIC */}
                         <div className="text-right">
-                          <span className="font-mono text-xs font-semibold text-cyan-400">
+                          <span className="font-mono text-xs font-semibold text-stone-700 dark:text-stone-300">
                             {skill.level}%
                           </span>
                         </div>
@@ -121,7 +121,7 @@ export default function SkillsGrid() {
                           initial={{ width: 0 }}
                           animate={{ width: `${skill.level}%` }}
                           transition={{ duration: 0.8, delay: 0.1 }}
-                          className="h-full bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"
+                          className="h-full bg-stone-700 dark:bg-stone-300 rounded-full"
                         />
                       </div>
                     </div>
@@ -133,7 +133,7 @@ export default function SkillsGrid() {
             {/* COLUMN: CODE & ENGINEER SPECIFICATION */}
             <div className="space-y-4">
               <h3 className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest text-left flex items-center gap-2 pl-2">
-                <Code className="w-4 h-4 text-purple-400" />
+                <Code className="w-4 h-4 text-stone-500 dark:text-stone-400" />
                 Software Engineering
               </h3>
 
@@ -150,8 +150,8 @@ export default function SkillsGrid() {
                         onClick={() => setActiveSkillId(skill.id)}
                         className={`group p-5 rounded-2xl border transition-all cursor-pointer relative ${
                           isSelected
-                            ? "bg-zinc-950 border-purple-500 ring-1 ring-purple-500 shadow-md shadow-purple-500/15"
-                            : "bg-zinc-900/30 border-purple-500/15 hover:bg-zinc-900/60"
+                            ? "bg-stone-100 border-stone-400 ring-1 ring-stone-400 shadow-sm dark:bg-zinc-950 dark:border-stone-500 dark:ring-stone-500"
+                            : "bg-white/70 border-stone-300/70 hover:bg-stone-100/80 dark:bg-zinc-900/30 dark:border-stone-700/70 dark:hover:bg-zinc-900/60"
                         }`}
                       >
                         <div className="flex items-start justify-between gap-4">
@@ -160,14 +160,14 @@ export default function SkillsGrid() {
                             <div
                               className={`p-2.5 rounded-xl transition-colors ${
                                 isSelected
-                                  ? "bg-gradient-to-r from-purple-500 to-rose-500 text-white"
-                                  : "bg-purple-950/30 text-purple-300 group-hover:bg-purple-950/50"
+                                  ? "bg-stone-800 text-white dark:bg-stone-200 dark:text-stone-900"
+                                  : "bg-stone-100 text-stone-700 group-hover:bg-stone-200 dark:bg-stone-900/60 dark:text-stone-300 dark:group-hover:bg-stone-800/70"
                               }`}
                             >
                               <IconComp className="w-4.5 h-4.5" />
                             </div>
                             <div>
-                              <h4 className="font-display font-bold text-sm text-white group-hover:text-purple-400 transition-colors">
+                              <h4 className="font-display font-bold text-sm text-stone-900 dark:text-white group-hover:text-stone-700 dark:group-hover:text-stone-300 transition-colors">
                                 {skill.name}
                               </h4>
                               <p className="text-slate-400 text-xs mt-0.5 max-w-[200px] sm:max-w-none line-clamp-1">
@@ -178,7 +178,7 @@ export default function SkillsGrid() {
 
                           {/* SKILL STAT METRIC */}
                           <div className="text-right">
-                            <span className="font-mono text-xs font-semibold text-purple-400">
+                            <span className="font-mono text-xs font-semibold text-stone-700 dark:text-stone-300">
                               {skill.level}%
                             </span>
                           </div>
@@ -190,7 +190,7 @@ export default function SkillsGrid() {
                             initial={{ width: 0 }}
                             animate={{ width: `${skill.level}%` }}
                             transition={{ duration: 0.8, delay: 0.1 }}
-                            className="h-full bg-gradient-to-r from-purple-500 to-rose-500 rounded-full"
+                            className="h-full bg-stone-700 dark:bg-stone-300 rounded-full"
                           />
                         </div>
                       </div>
@@ -212,26 +212,26 @@ export default function SkillsGrid() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.98, y: 10 }}
                   transition={{ duration: 0.2 }}
-                  className="bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-purple-500/20 shadow-xl text-left flex flex-col pt-6 relative overflow-hidden backdrop-blur-md"
+                  className="bg-white/80 dark:bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-stone-300/70 dark:border-stone-700/70 shadow-[0_16px_40px_rgba(15,23,42,0.06)] text-left flex flex-col pt-6 relative overflow-hidden backdrop-blur-md"
                 >
-                  <h4 className="font-mono text-[9px] font-bold text-cyan-400 uppercase tracking-widest leading-none flex items-center gap-1.5 bh-tight">
+                  <h4 className="font-mono text-[9px] font-bold text-stone-700 dark:text-stone-300 uppercase tracking-widest leading-none flex items-center gap-1.5 bh-tight">
                     <Sparkles className="w-3.5 h-3.5" />
                     Pernyataan Hibrida (Fusion Note)
                   </h4>
 
                   {/* Skill header */}
-                  <div className="flex items-center gap-3.5 mt-5 pb-5 border-b border-purple-500/10">
-                    <div className="p-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-xl">
+                  <div className="flex items-center gap-3.5 mt-5 pb-5 border-b border-stone-300/70 dark:border-stone-700/70">
+                    <div className="p-3 bg-stone-800 text-white rounded-xl dark:bg-stone-200 dark:text-stone-900">
                       {React.createElement(
                         iconMap[selectedSkill.icon] || HelpCircle,
                         { className: "w-5.5 h-5.5" },
                       )}
                     </div>
                     <div>
-                      <h3 className="font-display font-extrabold text-lg text-white leading-tight">
+                      <h3 className="font-display font-extrabold text-lg text-stone-900 dark:text-white leading-tight">
                         {selectedSkill.name}
                       </h3>
-                      <p className="font-mono text-[10px] text-slate-400 mt-1 uppercase">
+                      <p className="font-mono text-[10px] text-stone-500 dark:text-stone-400 mt-1 uppercase">
                         Sertifikasi:{" "}
                         {selectedSkill.category === "design"
                           ? "UX & Visual"
@@ -242,15 +242,15 @@ export default function SkillsGrid() {
 
                   {/* Core Description details */}
                   <div className="space-y-5 mt-5 flex-1">
-                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed">
                       {selectedSkill.details}
                     </p>
 
-                    <div className="p-4 rounded-xl bg-purple-950/20 border border-purple-500/10 space-y-3">
-                      <span className="font-mono text-[9px] font-bold text-cyan-400 uppercase tracking-wider">
+                    <div className="p-4 rounded-xl bg-stone-100/80 border border-stone-300/70 dark:bg-stone-900/60 dark:border-stone-700/70 space-y-3">
+                      <span className="font-mono text-[9px] font-bold text-stone-700 dark:text-stone-300 uppercase tracking-wider">
                         Filosofi Gabungan Kerja
                       </span>
-                      <p className="text-slate-400 text-xs leading-relaxed font-normal">
+                      <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed font-normal">
                         {selectedSkill.category === "design"
                           ? "Dibuat dengan memikirkan performa transfer aset ke developer, menghemat loading server dari kalkulasi layout berlebihan."
                           : "Direkayasa secara khusus untuk melayani spesifikasi visual figma, melenyapkan glitch layout pada berbagai ukuran viewport."}
@@ -258,15 +258,15 @@ export default function SkillsGrid() {
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-5 border-t border-purple-500/10 flex items-center justify-between text-xs text-slate-400 font-mono">
+                  <div className="mt-8 pt-5 border-t border-stone-300/70 dark:border-stone-700/70 flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 font-mono">
                     <span>Expertise Level</span>
-                    <span className="font-semibold text-cyan-400">
+                    <span className="font-semibold text-stone-700 dark:text-stone-300">
                       {selectedSkill.level}/100
                     </span>
                   </div>
                 </motion.div>
               ) : (
-                <div className="h-48 flex items-center justify-center p-8 border border-dashed border-purple-500/10 rounded-2xl bg-purple-950/10">
+                <div className="h-48 flex items-center justify-center p-8 border border-dashed border-stone-300/70 dark:border-stone-700/70 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40">
                   <p className="text-slate-400 text-xs font-mono">
                     Pilih spesifikasi keahlian di samping untuk memunculkan
                     wawasan detail.

@@ -56,10 +56,10 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
             className="w-9 h-9 rounded-[15px] object-cover shadow-sm group-hover:scale-105 transition-transform"
           />
           <div className="hidden sm:block">
-            <h1 className="font-display font-bold text-sm tracking-wide text-slate-900 dark:text-white leading-tight">
+            <h1 className="font-display font-bold text-sm tracking-wide text-stone-900 dark:text-white leading-tight">
               Ricky Rohaendi
             </h1>
-            <p className="font-mono text-[10px] text-indigo-600 dark:text-indigo-400 font-medium">
+            <p className="font-mono text-[10px] text-stone-600 dark:text-stone-400 font-medium">
               DESIGN × CODE
             </p>
           </div>
@@ -76,14 +76,14 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 onClick={() => handleItemClick(item.id)}
                 className={`relative px-4 py-2 rounded-full text-sm font-medium tracking-wide transition-colors cursor-pointer focus:outline-none ${
                   isActive
-                    ? "text-indigo-600 dark:text-indigo-400"
-                    : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                    ? "text-stone-700 dark:text-stone-300"
+                    : "text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white"
                 }`}
               >
                 {isActive && (
                   <motion.span
                     layoutId="activeNavIndicator"
-                    className="absolute inset-0 bg-indigo-50 dark:bg-slate-800/60 rounded-full -z-10"
+                    className="absolute inset-0 bg-stone-100 dark:bg-stone-800/70 rounded-full -z-10"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -99,13 +99,13 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
           <button
             id="theme-toggle-btn"
             onClick={toggleTheme}
-            className="p-2.5 rounded-full border border-slate-200 dark:border-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors cursor-pointer focus:outline-none"
+            className="p-2.5 rounded-full border border-stone-300 dark:border-stone-800 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition-colors cursor-pointer focus:outline-none"
             aria-label="Toggle theme color"
           >
             {theme === "dark" ? (
-              <Moon className="w-4 h-4 text-indigo-400" />
+              <Moon className="w-4 h-4 text-stone-500" />
             ) : (
-              <Sun className="w-4 h-4 text-amber-400" />
+              <Sun className="w-4 h-4 text-stone-600" />
             )}
           </button>
 
@@ -113,7 +113,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
           <button
             id="hire-me-btn"
             onClick={() => handleItemClick("contact")}
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-750 dark:hover:bg-indigo-600 text-white font-medium text-xs rounded-full shadow-sm shadow-indigo-600/10 cursor-pointer transition-colors focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-stone-800 hover:bg-stone-700 dark:bg-stone-200 dark:hover:bg-stone-100 text-white dark:text-stone-900 font-medium text-xs rounded-full shadow-sm cursor-pointer transition-colors focus:ring-2 focus:ring-stone-400 focus:outline-none"
           >
             Work with me
           </button>
@@ -122,7 +122,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
           <button
             id="mobile-menu-toggle-btn"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2.5 rounded-full border border-slate-200 dark:border-slate-850 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer focus:outline-none"
+            className="md:hidden p-2.5 rounded-full border border-stone-300 dark:border-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors cursor-pointer focus:outline-none"
             aria-label="Toggle mobile menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -139,7 +139,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 overflow-hidden"
+            className="md:hidden w-full bg-white dark:bg-slate-900 border-b border-stone-200 dark:border-stone-800 overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-3">
               {navItems.map((item) => {
@@ -151,8 +151,8 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                     onClick={() => handleItemClick(item.id)}
                     className={`w-full py-3 px-4 rounded-xl text-left text-base font-semibold border transition-all cursor-pointer ${
                       isActive
-                        ? "border-indigo-100 dark:border-slate-700/50 bg-indigo-50/50 dark:bg-slate-800/50 text-indigo-600 dark:text-indigo-400"
-                        : "border-transparent text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/30"
+                        ? "border-stone-200 dark:border-stone-700/60 bg-stone-100/70 dark:bg-stone-800/60 text-stone-700 dark:text-stone-300"
+                        : "border-transparent text-stone-600 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800/30"
                     }`}
                   >
                     {item.label}
@@ -162,7 +162,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
               <button
                 id="mobile-hire-me-btn"
                 onClick={() => handleItemClick("contact")}
-                className="w-full mt-2 py-3 px-4 bg-indigo-600 hover:bg-indigo-750 dark:bg-indigo-500 text-white font-semibold rounded-xl text-center shadow-md shadow-indigo-600/15 cursor-pointer"
+                className="w-full mt-2 py-3 px-4 bg-stone-800 hover:bg-stone-700 dark:bg-stone-200 dark:hover:bg-stone-100 text-white dark:text-stone-900 font-semibold rounded-xl text-center shadow-sm cursor-pointer"
               >
                 Work with me
               </button>

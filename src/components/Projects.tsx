@@ -32,8 +32,8 @@ export default function Projects() {
         {/* SECTION HEADER */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 text-left">
           <div className="flex flex-col items-start gap-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/20 text-purple-300 font-mono text-xs font-semibold">
-              <Layers className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-300/80 bg-stone-100/80 text-stone-700 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-stone-300 font-mono text-xs font-semibold">
+              <Layers className="w-3.5 h-3.5 text-stone-500 dark:text-stone-400" />
               <span>Featured Case Studies</span>
             </div>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
@@ -46,7 +46,7 @@ export default function Projects() {
           </div>
 
           {/* FILTER CONTROLLER BUTTONS */}
-          <div className="flex flex-wrap items-center gap-1.5 self-start sm:self-auto bg-slate-950 p-1.5 rounded-2xl border border-purple-500/20">
+          <div className="flex flex-wrap items-center gap-1.5 self-start sm:self-auto bg-stone-100/80 dark:bg-stone-900/70 p-1.5 rounded-2xl border border-stone-300/70 dark:border-stone-700/70">
             {(
               [
                 { id: "all", label: "All" },
@@ -61,8 +61,8 @@ export default function Projects() {
                 onClick={() => setFilter(tab.id)}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all cursor-pointer focus:outline-none ${
                   filter === tab.id
-                    ? "bg-gradient-to-r from-cyan-500 via-purple-500 to-rose-500 text-white shadow-md font-semibold"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-stone-800 text-white shadow-sm font-semibold dark:bg-stone-200 dark:text-stone-900"
+                    : "text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-white"
                 }`}
               >
                 {tab.label}
@@ -83,13 +83,13 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 15 }}
                 transition={{ duration: 0.25, delay: index * 0.05 }}
-                className="group relative bg-zinc-900/45 rounded-3xl border border-purple-500/20 hover:border-cyan-400/45 overflow-hidden cursor-pointer shadow-lg hover:shadow-cyan-500/5 transition-all duration-300 flex flex-col pt-0 backdrop-blur-md"
+                className="group relative bg-white/70 dark:bg-zinc-900/45 rounded-3xl border border-stone-300/70 dark:border-stone-700/70 hover:border-stone-400/70 overflow-hidden cursor-pointer shadow-[0_16px_40px_rgba(15,23,42,0.06)] hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)] transition-all duration-300 flex flex-col pt-0 backdrop-blur-md"
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Visual Cover Picture container */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
-                  <div className="absolute inset-0 bg-purple-950/40 z-10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold text-xs tracking-wide shadow-lg flex items-center gap-1.5 transition-transform transform scale-95 group-hover:scale-100 duration-200">
+                  <div className="absolute inset-0 bg-stone-900/45 z-10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="px-4 py-2 rounded-full bg-stone-800 text-white font-semibold text-xs tracking-wide shadow-lg flex items-center gap-1.5 transition-transform transform scale-95 group-hover:scale-100 duration-200">
                       Selidiki Studi Kasus
                       <ArrowUpRight className="w-3.5 h-3.5 text-white" />
                     </span>
@@ -101,7 +101,7 @@ export default function Projects() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Category overlay label */}
-                  <span className="absolute top-4 left-4 z-20 px-2.5 py-1 text-[9px] font-mono font-bold tracking-widest uppercase bg-gradient-to-r from-cyan-500 to-purple-600 rounded-md text-white">
+                  <span className="absolute top-4 left-4 z-20 px-2.5 py-1 text-[9px] font-mono font-bold tracking-widest uppercase bg-stone-800 rounded-md text-white">
                     {project.category === "dual"
                       ? "DESIGN × CODE"
                       : project.category.toUpperCase()}
@@ -111,26 +111,26 @@ export default function Projects() {
                 {/* Cover info */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between items-start text-left">
                   <div className="space-y-3 w-full">
-                    <h3 className="font-display font-bold text-xl sm:text-2xl text-white leading-snug group-hover:text-cyan-450 transition-colors">
+                    <h3 className="font-display font-bold text-xl sm:text-2xl text-stone-900 dark:text-white leading-snug group-hover:text-stone-700 dark:group-hover:text-stone-300 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                    <p className="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
                       {project.description}
                     </p>
                   </div>
 
                   {/* BOTTOM SUBTAGS */}
-                  <div className="flex flex-wrap gap-1.5 mt-6 pt-6 border-t border-purple-500/10 w-full">
+                  <div className="flex flex-wrap gap-1.5 mt-6 pt-6 border-t border-stone-300/70 dark:border-stone-700/70 w-full">
                     {project.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded bg-purple-950/20 border border-purple-500/10 font-mono text-[10px] text-cyan-300 hover:text-white transition-colors"
+                        className="px-2.5 py-1 rounded bg-stone-100/80 border border-stone-300/70 dark:bg-stone-900/60 dark:border-stone-700/70 font-mono text-[10px] text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition-colors"
                       >
                         {tag}
                       </span>
                     ))}
                     {project.tags.length > 3 && (
-                      <span className="px-2.5 py-1 rounded bg-purple-950/30 font-mono text-[10px] text-purple-300 font-semibold border border-purple-500/10">
+                      <span className="px-2.5 py-1 rounded bg-stone-200/70 dark:bg-stone-800/60 font-mono text-[10px] text-stone-700 dark:text-stone-300 font-semibold border border-stone-300/70 dark:border-stone-700/70">
                         +{project.tags.length - 3} lainnya
                       </span>
                     )}
@@ -158,7 +158,7 @@ export default function Projects() {
                 animate={{ scale: 1, y: 0, opacity: 1 }}
                 exit={{ scale: 0.94, y: 15, opacity: 0 }}
                 transition={{ type: "spring", stiffness: 280, damping: 25 }}
-                className="relative bg-zinc-950 w-full max-w-4xl rounded-3xl border border-purple-500/20 shadow-2xl overflow-hidden text-left"
+                className="relative bg-white/90 dark:bg-zinc-950 w-full max-w-4xl rounded-3xl border border-stone-300/70 dark:border-stone-700/70 shadow-[0_24px_70px_rgba(15,23,42,0.12)] overflow-hidden text-left"
                 onClick={(e) => e.stopPropagation()} // Stop clicking content from dismissal
               >
                 {/* CLOSE CONTAINER */}
@@ -173,7 +173,7 @@ export default function Projects() {
                 {/* MODAL BODY */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[85vh] lg:max-h-none overflow-y-auto lg:overflow-visible">
                   {/* Left structural Column (Hero & tags, metric stats lg:col-span-5) */}
-                  <div className="lg:col-span-5 bg-zinc-900/40 p-6 sm:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-purple-500/10">
+                  <div className="lg:col-span-5 bg-stone-50/80 dark:bg-zinc-900/40 p-6 sm:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-stone-300/70 dark:border-stone-700/70">
                     <div className="space-y-6">
                       <div className="rounded-2xl overflow-hidden aspect-[16/10] w-full bg-slate-900 shadow-sm">
                         <img
@@ -184,7 +184,7 @@ export default function Projects() {
                       </div>
 
                       <div className="space-y-2">
-                        <span className="px-2.5 py-0.5 text-[9px] font-mono font-bold tracking-widest uppercase bg-purple-950/40 text-cyan-300 rounded">
+                        <span className="px-2.5 py-0.5 text-[9px] font-mono font-bold tracking-widest uppercase bg-stone-200/70 text-stone-700 dark:bg-stone-800/70 dark:text-stone-300 rounded">
                           {selectedProject.category.toUpperCase()}
                         </span>
                         <h4 className="font-display font-extrabold text-xl sm:text-2xl text-white leading-tight">
@@ -194,25 +194,36 @@ export default function Projects() {
 
                       {/* EXTERNAL NAV LINKS */}
                       <div className="flex flex-wrap gap-3.5 pt-2">
-                        {selectedProject.githubUrl && (
+                        {(selectedProject.githubUrls?.length
+                          ? selectedProject.githubUrls
+                          : selectedProject.githubUrl
+                            ? [
+                                {
+                                  label: "GitHub Code",
+                                  url: selectedProject.githubUrl,
+                                },
+                              ]
+                            : []
+                        ).map((githubLink) => (
                           <a
-                            href={selectedProject.githubUrl}
+                            key={githubLink.url}
+                            href={githubLink.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-medium text-xs shadow-sm transition-all text-center"
+                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white font-medium text-xs shadow-sm transition-all text-center dark:bg-stone-200 dark:hover:bg-stone-100 dark:text-stone-900"
                           >
                             <Github className="w-4 h-4" />
-                            GitHub Code
+                            {githubLink.label}
                           </a>
-                        )}
+                        ))}
                         {selectedProject.liveUrl && (
                           <a
                             href={selectedProject.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl border border-purple-500/30 hover:border-cyan-400/50 text-white font-medium text-xs transition-transform"
+                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl border border-stone-300/70 hover:border-stone-400 bg-white/80 text-stone-800 dark:bg-stone-900/60 dark:border-stone-700/70 dark:text-stone-200 font-medium text-xs transition-transform"
                           >
-                            <ExternalLink className="w-4 h-4 text-cyan-300" />
+                            <ExternalLink className="w-4 h-4 text-stone-600 dark:text-stone-400" />
                             Live Website
                           </a>
                         )}
@@ -221,9 +232,9 @@ export default function Projects() {
                             href={selectedProject.figmaUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl border border-purple-500/30 hover:border-cyan-400/50 text-white font-medium text-xs transition-transform"
+                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl border border-stone-300/70 hover:border-stone-400 bg-white/80 text-stone-800 dark:bg-stone-900/60 dark:border-stone-700/70 dark:text-stone-200 font-medium text-xs transition-transform"
                           >
-                            <Layers className="w-4 h-4 text-rose-500" />
+                            <Layers className="w-4 h-4 text-stone-600 dark:text-stone-400" />
                             Figma File
                           </a>
                         )}
@@ -231,18 +242,18 @@ export default function Projects() {
                     </div>
 
                     {/* METRICS OR STATS COLUMN BLOCK */}
-                    <div className="mt-8 pt-6 border-t border-purple-500/10 space-y-4">
+                    <div className="mt-8 pt-6 border-t border-stone-300/70 dark:border-stone-700/70 space-y-4">
                       <h5 className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
-                        <TrendingUp className="w-3.5 h-3.5 text-cyan-400" />
+                        <TrendingUp className="w-3.5 h-3.5 text-stone-600 dark:text-stone-400" />
                         Metrik Kesuksesan Proyek
                       </h5>
                       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3">
                         {selectedProject.metrics.map((m) => (
                           <div
                             key={m.label}
-                            className="p-3.5 rounded-xl bg-purple-950/20 border border-purple-500/10 flex flex-col"
+                            className="p-3.5 rounded-xl bg-stone-100/80 border border-stone-300/70 dark:bg-stone-900/60 dark:border-stone-700/70 flex flex-col"
                           >
-                            <span className="font-display font-black text-lg sm:text-xl text-cyan-400">
+                            <span className="font-display font-black text-lg sm:text-xl text-stone-800 dark:text-stone-200">
                               {m.value}
                             </span>
                             <span className="font-mono text-[9px] text-slate-400 mt-1 uppercase">
@@ -257,7 +268,7 @@ export default function Projects() {
                   {/* Right Column (Long Description, Technologies used, Key Deliverables lg:col-span-7) */}
                   <div className="lg:col-span-7 p-6 sm:p-8 space-y-6 overflow-y-auto lg:h-[80vh]">
                     <div className="space-y-3">
-                      <h5 className="font-mono text-[10px] font-bold text-cyan-400 uppercase tracking-widest flex items-center gap-1.5">
+                      <h5 className="font-mono text-[10px] font-bold text-stone-700 dark:text-stone-300 uppercase tracking-widest flex items-center gap-1.5">
                         <FileText className="w-3.5 h-3.5" />
                         Latar Belakang & Deskripsi
                       </h5>
@@ -276,7 +287,7 @@ export default function Projects() {
                         {selectedProject.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-3 py-1 bg-purple-950/20 border border-purple-500/10 rounded-lg text-xs font-mono text-cyan-300"
+                            className="px-3 py-1 bg-stone-100/80 border border-stone-300/70 dark:bg-stone-900/60 dark:border-stone-700/70 rounded-lg text-xs font-mono text-stone-700 dark:text-stone-300"
                           >
                             {tag}
                           </span>
@@ -293,7 +304,7 @@ export default function Projects() {
                         {selectedProject.deliverables.map((out) => (
                           <div
                             key={out}
-                            className="flex items-start gap-2.5 p-3 rounded-xl bg-purple-955/20 border border-purple-500/10"
+                            className="flex items-start gap-2.5 p-3 rounded-xl bg-stone-100/80 border border-stone-300/70 dark:bg-stone-900/60 dark:border-stone-700/70"
                           >
                             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                             <span className="text-xs sm:text-sm text-slate-350">

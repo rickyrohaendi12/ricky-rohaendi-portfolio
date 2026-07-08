@@ -32,6 +32,50 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: "vacationdotcom",
+    title: "VacationDotCom - Fullstack Development",
+    category: "fullstack",
+    tags: [
+      "React",
+      "TypeScript",
+      "Web App",
+      "Laravel",
+      "Tailwind",
+      "Motion",
+      "Maidtrans",
+      "MySQL",
+    ],
+    description:
+      "A fullstack web application for booking flight and train tickets with a seamless user experience, featuring authentication, ticket booking, payment processing, and digital ticket management.",
+    longDescription:
+      "VacationDotCom is a fullstack ticket booking platform designed to simplify the process of purchasing flight and train tickets. The application was built using React and TypeScript for the frontend, with Laravel and MySQL powering the backend system. It provides a complete user journey, including account registration, login authentication, personalized dashboards, ticket search, booking management, payment processing, PDF ticket generation, and booking history tracking. The project focused on creating a responsive interface, efficient data management, and a seamless booking experience across devices.",
+    image: "/img/vacationdotcom.png",
+    githubUrls: [
+      {
+        label: "Frontend Repository",
+        url: "https://github.com/rickyrohaendi12/vacationdotcom-fe",
+      },
+      {
+        label: "Backend Repository",
+        url: "https://github.com/rickyrohaendi12/vacationdotcom-be",
+      },
+    ],
+    liveUrl: "https://vacationdotcom.vercel.app/",
+    metrics: [
+      { label: "Fullstack Architecture", value: "React + Laravel" },
+      { label: "Database Management", value: "MySQL Integration" },
+      { label: "Booking Experience", value: "End-to-End Workflow" },
+    ],
+    deliverables: [
+      "Developed a responsive ticket booking web application using React, TypeScript, and Tailwind CSS",
+      "Built RESTful backend services using Laravel with MySQL database integration for managing users, tickets, and transactions",
+      "Implemented authentication system including register, login, and personalized user dashboard",
+      "Created ticket booking workflow with payment processing and booking confirmation",
+      "Implemented PDF ticket generation and download functionality for digital travel tickets",
+      "Developed booking history features to allow users to view and manage their purchased tickets",
+    ],
+  },
+  {
     id: "vibeliners",
     title: "VibeLiners - Frontend & API Development",
     category: "engineering",
@@ -83,7 +127,7 @@ export const PROJECTS: Project[] = [
   {
     id: "e-commerce",
     title: "E-Commerce Website - Front-End Development & UI/UX Design",
-    category: "dual",
+    category: "fullstack",
     tags: ["React", "Node.js", "JavaScript", "E-Commerce"],
     description:
       "A modern e-commerce website designed to deliver a smooth shopping experience through intuitive navigation, promotional highlights, and responsive product browsing.",
@@ -132,7 +176,7 @@ export const PROJECTS: Project[] = [
   {
     id: "wc-2026",
     title: "World Cup 2026 Website - UI/UX Design & Front-End Development",
-    category: "dual",
+    category: "fullstack",
     tags: ["React", "TypeScript", "Web App"],
     description:
       "A modern web application designed to provide a seamless and engaging user experience with intuitive navigation, personalized content, and responsive interactions.",

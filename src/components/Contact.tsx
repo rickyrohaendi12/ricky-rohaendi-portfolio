@@ -73,7 +73,7 @@ export default function Contact() {
       className="py-24 bg-transparent relative overflow-hidden"
     >
       {/* Background orbs */}
-      <div className="absolute bottom-[-10%] left-[-5%] w-72 h-72 rounded-full bg-purple-500/5 blur-2xl pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-5%] w-72 h-72 rounded-full bg-stone-300/20 blur-2xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* SECTION METRICS */}
@@ -81,8 +81,8 @@ export default function Contact() {
           {/* LEFT SIDEBAR DETAIL INFO (lg:col-span-5) */}
           <div className="lg:col-span-5 text-left space-y-8 lg:sticky lg:top-32">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/20 text-purple-300 font-mono text-xs font-semibold">
-                <Smile className="w-3.5 h-3.5 text-cyan-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-300/80 bg-stone-100/80 text-stone-700 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-stone-300 font-mono text-xs font-semibold">
+                <Smile className="w-3.5 h-3.5 text-stone-500 dark:text-stone-400" />
                 <span>Start Collaborating</span>
               </div>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
@@ -102,8 +102,8 @@ export default function Contact() {
             {/* QUICK CONTACT METRICS */}
             <div className="space-y-4.5 pt-4">
               <div className="flex items-center gap-3.5">
-                <div className="p-3 bg-purple-950/10 border border-purple-500/15 text-slate-300 rounded-xl">
-                  <Mail className="w-5 h-5 text-cyan-400" />
+                <div className="p-3 bg-stone-100/80 border border-stone-300/70 text-stone-700 dark:bg-stone-900/60 dark:border-stone-700/70 dark:text-stone-300 rounded-xl">
+                  <Mail className="w-5 h-5 text-stone-600 dark:text-stone-400" />
                 </div>
                 <div>
                   <p className="font-mono text-[9px] text-slate-500 uppercase tracking-widest leading-none">
@@ -111,7 +111,7 @@ export default function Contact() {
                   </p>
                   <a
                     href="mailto:rickyrohaendi1@gmail.com"
-                    className="font-display font-semibold text-sm sm:text-base text-white hover:text-cyan-400 transition-colors"
+                    className="font-display font-semibold text-sm sm:text-base text-stone-900 dark:text-white hover:text-stone-700 dark:hover:text-stone-300 transition-colors"
                   >
                     rickyrohaendi1@gmail.com
                   </a>
@@ -119,14 +119,14 @@ export default function Contact() {
               </div>
 
               <div className="flex items-center gap-3.5">
-                <div className="p-3 bg-purple-950/10 border border-purple-500/15 text-slate-300 rounded-xl">
-                  <MapPin className="w-5 h-5 text-purple-450" />
+                <div className="p-3 bg-stone-100/80 border border-stone-300/70 text-stone-700 dark:bg-stone-900/60 dark:border-stone-700/70 dark:text-stone-300 rounded-xl">
+                  <MapPin className="w-5 h-5 text-stone-600 dark:text-stone-400" />
                 </div>
                 <div>
                   <p className="font-mono text-[9px] text-slate-500 uppercase tracking-widest leading-none">
                     Location
                   </p>
-                  <p className="font-display font-semibold text-sm sm:text-base text-white">
+                  <p className="font-display font-semibold text-sm sm:text-base text-stone-900 dark:text-white">
                     Bandung, West Java, Indonesia
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export default function Contact() {
             </div>
 
             {/* EXTERNAL NETWORKS PANEL */}
-            <div className="space-y-3.5 pt-6 border-t border-purple-500/10">
+            <div className="space-y-3.5 pt-6 border-t border-stone-300/70 dark:border-stone-700/70">
               <h5 className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest pl-1 leading-none">
                 Professional Social Channels
               </h5>
@@ -144,7 +144,7 @@ export default function Contact() {
                   href="https://github.com/rickyrohaendi12"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl border border-purple-500/10 hover:border-cyan-400/40 bg-zinc-950 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer"
+                  className="p-3 rounded-xl border border-stone-300/70 hover:border-stone-400 bg-white/80 dark:bg-zinc-950 dark:border-stone-700/70 text-stone-700 hover:text-stone-900 dark:text-stone-300 dark:hover:text-stone-100 transition-colors cursor-pointer"
                   aria-label="Visit Github Portfolio"
                 >
                   <Github className="w-5 h-5" />
@@ -154,7 +154,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/ricky-rohaendi/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl border border-purple-500/10 hover:border-purple-500/40 bg-zinc-950 text-slate-300 hover:text-purple-400 transition-colors cursor-pointer"
+                  className="p-3 rounded-xl border border-stone-300/70 hover:border-stone-400 bg-white/80 dark:bg-zinc-950 dark:border-stone-700/70 text-stone-700 hover:text-stone-900 dark:text-stone-300 dark:hover:text-stone-100 transition-colors cursor-pointer"
                   aria-label="Visit LinkedIn Profile"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -164,7 +164,7 @@ export default function Contact() {
                   href="https://instagram.com/rckyrrr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl border border-purple-500/10 hover:border-rose-400/40 bg-zinc-950 text-slate-300 hover:text-rose-400 transition-colors cursor-pointer"
+                  className="p-3 rounded-xl border border-stone-300/70 hover:border-stone-400 bg-white/80 dark:bg-zinc-950 dark:border-stone-700/70 text-stone-700 hover:text-stone-900 dark:text-stone-300 dark:hover:text-stone-100 transition-colors cursor-pointer"
                   aria-label="Visit Instagram Profile"
                 >
                   <Instagram className="w-5 h-5" />
@@ -174,7 +174,7 @@ export default function Contact() {
                   href="https://www.tiktok.com/@rr_uid"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl border border-purple-500/10 hover:border-cyan-400/40 bg-zinc-950 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer"
+                  className="p-3 rounded-xl border border-stone-300/70 hover:border-stone-400 bg-white/80 dark:bg-zinc-950 dark:border-stone-700/70 text-stone-700 hover:text-stone-900 dark:text-stone-300 dark:hover:text-stone-100 transition-colors cursor-pointer"
                   aria-label="Visit TikTok Profile"
                 >
                   <Music className="w-5 h-5" />
@@ -184,11 +184,11 @@ export default function Contact() {
           </div>
 
           {/* RIGHT ACTION FORM (lg:col-span-7) */}
-          <div className="lg:col-span-7 bg-zinc-950/60 p-6 sm:p-8 rounded-3xl border border-purple-500/20 text-left flex flex-col relative w-full backdrop-blur-md">
+          <div className="lg:col-span-7 bg-white/80 dark:bg-zinc-950/60 p-6 sm:p-8 rounded-3xl border border-stone-300/70 dark:border-stone-700/70 text-left flex flex-col relative w-full backdrop-blur-md">
             {/* Dynamic visual micro feedback status block */}
-            <div className="mb-6 p-3.5 rounded-xl bg-purple-950/25 border border-purple-500/10 flex items-center gap-2.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-cyan-405 animate-pulse shrink-0" />
-              <span className="font-mono text-[11px] text-slate-300 italic">
+            <div className="mb-6 p-3.5 rounded-xl bg-stone-100/80 border border-stone-300/70 dark:bg-stone-900/60 dark:border-stone-700/70 flex items-center gap-2.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-stone-500 animate-pulse shrink-0" />
+              <span className="font-mono text-[11px] text-stone-600 dark:text-stone-300 italic">
                 {getStatusMessage()}
               </span>
             </div>
@@ -212,7 +212,7 @@ export default function Contact() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("name")}
                     onBlur={handleBlur}
-                    className="w-full px-4 py-3 rounded-xl border border-purple-500/20 bg-purple-950/15 text-white text-sm focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 transition-all font-sans"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-300/70 bg-stone-100/70 text-stone-900 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-stone-400 focus:border-stone-400 transition-all font-sans"
                     placeholder="Example: Ricky Rohaendi"
                   />
                 </div>
@@ -234,7 +234,7 @@ export default function Contact() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("email")}
                     onBlur={handleBlur}
-                    className="w-full px-4 py-3 rounded-xl border border-purple-500/20 bg-purple-950/15 text-white text-sm focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 transition-all font-sans"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-300/70 bg-stone-100/70 text-stone-900 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-stone-400 focus:border-stone-400 transition-all font-sans"
                     placeholder="Example: ricky@rohaendi.com"
                   />
                 </div>
@@ -254,7 +254,7 @@ export default function Contact() {
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-purple-500/20 bg-purple-950/15 text-white text-sm focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 transition-all font-semibold cursor-pointer appearance-none"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-300/70 bg-stone-100/70 text-stone-900 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-stone-400 focus:border-stone-400 transition-all font-semibold cursor-pointer appearance-none"
                   >
                     <option
                       value="dual"
@@ -304,7 +304,7 @@ export default function Contact() {
                   onChange={handleChange}
                   onFocus={() => handleFocus("message")}
                   onBlur={handleBlur}
-                  className="w-full px-4 py-3 rounded-xl border border-purple-500/20 bg-purple-950/15 text-white text-sm focus:outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 transition-all font-sans leading-relaxed"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-300/70 bg-stone-100/70 text-stone-900 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-white text-sm focus:outline-none focus:ring-1 focus:ring-stone-400 focus:border-stone-400 transition-all font-sans leading-relaxed"
                   placeholder="Tell us a brief overview of your product idea or modular system requirements here..."
                 />
               </div>
@@ -316,8 +316,8 @@ export default function Contact() {
                 disabled={isSubmitting || isSuccess}
                 className={`w-full py-3.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide text-white transition-all cursor-pointer focus:outline-none relative shadow-lg ${
                   isSuccess
-                    ? "bg-emerald-600 shadow-emerald-700/10"
-                    : "bg-gradient-to-r from-cyan-500 via-purple-600 to-rose-500 hover:opacity-95 shadow-purple-550/15"
+                    ? "bg-stone-700 shadow-stone-700/10"
+                    : "bg-stone-800 hover:bg-stone-700 dark:bg-stone-200 dark:hover:bg-stone-100 dark:text-stone-900 shadow-stone-800/10"
                 }`}
               >
                 {isSubmitting ? (
@@ -345,10 +345,10 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 10, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  className="mt-4 p-4 rounded-xl bg-emerald-950/20 border border-emerald-900/30 text-emerald-400 font-medium text-xs leading-relaxed"
+                  className="mt-4 p-4 rounded-xl bg-stone-100/80 border border-stone-300/70 text-stone-700 dark:bg-stone-900/60 dark:border-stone-700/70 dark:text-stone-300 font-medium text-xs leading-relaxed"
                 >
                   <p className="flex items-center gap-2 font-display">
-                    <Sparkles className="w-4 h-4 text-emerald-405 animate-pulse shrink-0" />
+                    <Sparkles className="w-4 h-4 text-stone-500 dark:text-stone-400 animate-pulse shrink-0" />
                     Thank you for your interest! The simulation contact has been
                     sent successfully. I will reach out to your email as soon as
                     possible.

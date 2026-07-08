@@ -23,8 +23,8 @@ export default function Sandbox() {
     "dark-slate" | "light-glass" | "indigo-electric" | "emerald-minimal"
   >("indigo-electric");
   const [shadowDepth, setShadowDepth] = useState<
-    "none" | "md" | "xl" | "glow-indigo"
-  >("glow-indigo");
+    "none" | "md" | "xl" | "glow-stone"
+  >("md");
   const [fontFamily, setFontFamily] = useState<"sans" | "display" | "mono">(
     "display",
   );
@@ -50,23 +50,23 @@ export default function Sandbox() {
   const themeMap = {
     "dark-slate": {
       className:
-        "bg-zinc-900 border border-purple-500/20 text-white shadow-purple-950/50",
-      label: "Slate Velvet",
+        "bg-stone-900 border border-stone-400/30 text-stone-50 shadow-stone-950/20",
+      label: "Slate Quiet",
     },
     "light-glass": {
       className:
-        "bg-zinc-950/90 border border-cyan-500/20 text-white shadow-cyan-950/50 backdrop-blur-md",
-      label: "Glass Cyan",
+        "bg-white/80 border border-stone-300/70 text-stone-800 shadow-stone-300/30 backdrop-blur-md",
+      label: "Glass Stone",
     },
     "indigo-electric": {
       className:
-        "bg-gradient-to-br from-purple-950 via-slate-900 to-cyan-950 border border-cyan-500/30 text-purple-50 shadow-purple-950/60",
-      label: "Cyber Quantum",
+        "bg-stone-100 border border-stone-300/70 text-stone-800 shadow-stone-300/30",
+      label: "Stone Calm",
     },
     "emerald-minimal": {
       className:
-        "bg-gradient-to-br from-rose-950 via-purple-950 to-slate-950 border border-rose-500/30 text-rose-100 shadow-rose-950/60",
-      label: "Rose Horizon",
+        "bg-stone-50 border border-stone-300/70 text-stone-700 shadow-stone-200/40",
+      label: "Minimal Sand",
     },
   };
 
@@ -74,7 +74,7 @@ export default function Sandbox() {
     none: "shadow-none",
     md: "shadow-md",
     xl: "shadow-xl",
-    "glow-indigo": "shadow-2xl shadow-purple-500/20",
+    "glow-stone": "shadow-2xl shadow-stone-300/40",
   };
 
   const fontMap = {
@@ -88,7 +88,7 @@ export default function Sandbox() {
     setPaddingVal("6");
     setBorderRadius("2xl");
     setThemeStyle("indigo-electric");
-    setShadowDepth("glow-indigo");
+    setShadowDepth("glow-stone");
     setFontFamily("display");
     setCardTitle("Build Beyond Boundaries");
   };
@@ -103,7 +103,7 @@ export default function Sandbox() {
   const generatedTailwindString = `
 <div className="${activeTheme.className} ${activePadding.className} ${activeBorder.className} ${activeShadow} ${activeFont} max-w-sm transition-all duration-300">
   <div className="flex items-center gap-3">
-    <span className="px-2 py-1 text-[10px] uppercase font-mono tracking-wider bg-purple-500/20 text-purple-300 rounded-full">
+    <span className="px-2 py-1 text-[10px] uppercase font-mono tracking-wider bg-stone-200/80 text-stone-700 rounded-full">
       Design Token Code
     </span>
   </div>
@@ -113,7 +113,7 @@ export default function Sandbox() {
   <p className="opacity-80 text-sm mt-2 leading-relaxed">
     Bridging aesthetic design variables and functional react states variables instantly. 
   </p>
-  <button className="mt-5 w-full py-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 font-semibold text-xs text-white">
+  <button className="mt-5 w-full py-2.5 rounded-lg bg-stone-800 hover:bg-stone-700 font-semibold text-xs text-white">
     Initialize Flow
   </button>
 </div>
@@ -128,7 +128,7 @@ export default function Sandbox() {
   return (
     <section
       id="sandbox"
-      className="py-24 bg-transparent border-y border-purple-500/10 relative overflow-hidden transition-colors"
+      className="py-24 bg-transparent border-y border-stone-300/70 dark:border-stone-800 relative overflow-hidden transition-colors"
     >
       {/* Visual background lines */}
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#0A0A0B] to-transparent pointer-events-none" />
@@ -136,8 +136,8 @@ export default function Sandbox() {
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* SECTION HEADER */}
         <div className="flex flex-col items-start gap-3 mb-16 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/20 text-purple-300 font-mono text-xs font-semibold">
-            <Sliders className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-300/80 bg-stone-100/80 text-stone-700 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-stone-300 font-mono text-xs font-semibold">
+            <Sliders className="w-3.5 h-3.5 text-stone-500 dark:text-stone-400" />
             <span>Interactive Sandbox Workspace</span>
           </div>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
@@ -153,16 +153,16 @@ export default function Sandbox() {
         {/* WORKSPACE BENTO GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* CONTROLS SIDEBAR (lg:col-span-5) */}
-          <div className="lg:col-span-5 bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-purple-500/20 shadow-xl space-y-6 text-left relative z-10">
+          <div className="lg:col-span-5 bg-white/80 dark:bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-stone-300/70 dark:border-stone-700/70 shadow-[0_18px_45px_rgba(15,23,42,0.06)] space-y-6 text-left relative z-10">
             <div className="flex items-center justify-between pb-4 border-b border-purple-550/10">
               <div className="flex items-center gap-2 font-display font-bold text-base text-white">
-                <Settings className="w-4.5 h-4.5 text-purple-400 animate-spin-slow" />
+                <Settings className="w-4.5 h-4.5 text-stone-600 dark:text-stone-400 animate-spin-slow" />
                 <span>Design Variables (Tokens)</span>
               </div>
               <button
                 id="sandbox-reset-btn"
                 onClick={handleReset}
-                className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-400 font-medium font-mono cursor-pointer transition-colors"
+                className="flex items-center gap-1.5 text-xs text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 font-medium font-mono cursor-pointer transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 Reset
@@ -180,7 +180,7 @@ export default function Sandbox() {
                 value={cardTitle}
                 onChange={(e) => setCardTitle(e.target.value.substring(0, 36))}
                 maxLength={36}
-                className="w-full px-4 py-2 text-sm rounded-lg border border-purple-500/20 bg-purple-950/25 text-white focus:outline-none focus:ring-1 focus:ring-cyan-400"
+                className="w-full px-4 py-2 text-sm rounded-lg border border-stone-300/70 bg-stone-100/70 text-stone-900 dark:border-stone-700/70 dark:bg-stone-900/60 dark:text-white focus:outline-none focus:ring-1 focus:ring-stone-400"
                 placeholder="Enter title here..."
               />
             </div>
@@ -201,8 +201,8 @@ export default function Sandbox() {
                     onClick={() => setPaddingVal(val)}
                     className={`py-1.5 rounded-lg font-mono text-xs font-medium cursor-pointer transition-all ${
                       paddingVal === val
-                        ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-md"
-                        : "bg-purple-950/20 text-slate-350 hover:bg-purple-950/40 border border-purple-500/10"
+                        ? "bg-stone-800 text-white shadow-sm dark:bg-stone-200 dark:text-stone-900"
+                        : "bg-stone-100 text-stone-700 hover:bg-stone-200 border border-stone-300/70 dark:bg-stone-900/60 dark:text-stone-300 dark:hover:bg-stone-800/70 dark:border-stone-700/70"
                     }`}
                   >
                     {val === "4"
@@ -243,8 +243,8 @@ export default function Sandbox() {
                     onClick={() => setBorderRadius(val)}
                     className={`py-1.5 rounded-lg font-mono text-xs font-medium capitalize cursor-pointer transition-all ${
                       borderRadius === val
-                        ? "bg-gradient-to-r from-purple-500 to-rose-500 text-white shadow-md"
-                        : "bg-purple-950/20 text-slate-400 hover:bg-purple-950/40 border border-purple-500/10"
+                        ? "bg-stone-800 text-white shadow-sm dark:bg-stone-200 dark:text-stone-900"
+                        : "bg-stone-100 text-stone-700 hover:bg-stone-200 border border-stone-300/70 dark:bg-stone-900/60 dark:text-stone-300 dark:hover:bg-stone-800/70 dark:border-stone-700/70"
                     }`}
                   >
                     {val}
@@ -268,8 +268,8 @@ export default function Sandbox() {
                       onClick={() => setThemeStyle(key as any)}
                       className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl border text-xs font-medium cursor-pointer transition-all ${
                         isSelected
-                          ? "border-cyan-400 bg-purple-950/30 text-cyan-300"
-                          : "border-purple-500/10 bg-purple-950/10 text-slate-405 hover:border-purple-500/30"
+                          ? "border-stone-400 bg-stone-200/70 text-stone-800 dark:bg-stone-800/50 dark:text-stone-200"
+                          : "border-stone-300/70 bg-stone-100/70 text-stone-600 hover:border-stone-400 dark:bg-stone-900/50 dark:text-stone-400 dark:hover:border-stone-600"
                       }`}
                     >
                       <span>{style.label}</span>
@@ -277,25 +277,25 @@ export default function Sandbox() {
                         {key === "dark-slate" && (
                           <>
                             <span className="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-700" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-purple-500" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-stone-500" />
                           </>
                         )}
                         {key === "light-glass" && (
                           <>
                             <span className="w-2.5 h-2.5 rounded-full bg-zinc-950 border border-slate-650" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-stone-400" />
                           </>
                         )}
                         {key === "indigo-electric" && (
                           <>
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#1e1b4b] border border-cyan-500" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#a855f7]" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-stone-700 border border-stone-400" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-stone-500" />
                           </>
                         )}
                         {key === "emerald-minimal" && (
                           <>
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#991b1b] border border-[#f43f5e]" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#f43f5e]" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-stone-200 border border-stone-400" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-stone-400" />
                           </>
                         )}
                       </div>
@@ -318,8 +318,8 @@ export default function Sandbox() {
                     onClick={() => setShadowDepth(val)}
                     className={`py-1.5 rounded-lg font-mono text-xs font-medium cursor-pointer transition-all ${
                       shadowDepth === val
-                        ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-md"
-                        : "bg-purple-950/20 text-slate-400 hover:bg-purple-950/40 border border-purple-500/10"
+                        ? "bg-stone-800 text-white shadow-sm dark:bg-stone-200 dark:text-stone-900"
+                        : "bg-stone-100 text-stone-700 hover:bg-stone-200 border border-stone-300/70 dark:bg-stone-900/60 dark:text-stone-300 dark:hover:bg-stone-800/70 dark:border-stone-700/70"
                     }`}
                   >
                     {val === "glow-indigo"
@@ -347,8 +347,8 @@ export default function Sandbox() {
                     onClick={() => setFontFamily(val)}
                     className={`py-1.5 rounded-lg text-xs font-medium cursor-pointer transition-all ${
                       fontFamily === val
-                        ? "bg-gradient-to-r from-purple-500 to-rose-500 text-white shadow-md"
-                        : "bg-purple-950/20 text-slate-400 hover:bg-purple-950/40 border border-purple-500/10"
+                        ? "bg-stone-800 text-white shadow-sm dark:bg-stone-200 dark:text-stone-900"
+                        : "bg-stone-100 text-stone-700 hover:bg-stone-200 border border-stone-300/70 dark:bg-stone-900/60 dark:text-stone-300 dark:hover:bg-stone-800/70 dark:border-stone-700/70"
                     }`}
                   >
                     {val === "sans"
@@ -365,10 +365,10 @@ export default function Sandbox() {
           {/* DUAL DISPLAY PANELS (lg:col-span-7) */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             {/* IN-SITU LIVE PREVIEW PANEL */}
-            <div className="bg-zinc-950 p-8 rounded-2xl border border-purple-500/10 shadow-sm flex flex-col items-center justify-center min-h-[300px] relative">
+            <div className="bg-white/80 dark:bg-zinc-950 p-8 rounded-2xl border border-stone-300/70 dark:border-stone-700/70 shadow-sm flex flex-col items-center justify-center min-h-[300px] relative">
               {/* Figma visual guides lines */}
               <div className="absolute top-4 left-6 flex items-center gap-1 text-[10px] text-slate-400 font-mono uppercase tracking-widest leading-none select-none">
-                <LayoutGrid className="w-3.5 h-3.5 text-cyan-400" />
+                <LayoutGrid className="w-3.5 h-3.5 text-stone-500 dark:text-stone-400" />
                 <span>Live Rendering Interface (Figma Specs)</span>
               </div>
 
@@ -383,7 +383,7 @@ export default function Sandbox() {
                   <div className="absolute top-0 inset-x-0 h-1.5 bg-rose-500/10 pointer-events-none rounded-t border-b border-dashed border-rose-400/40 opacity-0 hover:opacity-100 transition-opacity" />
 
                   <div className="flex items-center gap-2">
-                    <span className="px-2.5 py-0.5 text-[9px] uppercase font-mono tracking-wider font-semibold rounded bg-purple-500/15 text-purple-300 border border-purple-500/20">
+                    <span className="px-2.5 py-0.5 text-[9px] uppercase font-mono tracking-wider font-semibold rounded bg-stone-200/80 text-stone-700 border border-stone-300/70 dark:bg-stone-800/60 dark:text-stone-300 dark:border-stone-700/70">
                       TOKEN: {themeStyle.replace("-", " ").toUpperCase()}
                     </span>
                   </div>
@@ -402,7 +402,7 @@ export default function Sandbox() {
                     <span>padding: {activePadding.px}</span>
                   </div>
 
-                  <button className="mt-5 w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-95 font-semibold text-xs text-white shadow-sm cursor-pointer transition-opacity focus:outline-none focus:ring-1 focus:ring-cyan-400">
+                  <button className="mt-5 w-full py-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 dark:bg-stone-200 dark:hover:bg-stone-100 dark:text-stone-900 font-semibold text-xs text-white shadow-sm cursor-pointer transition-opacity focus:outline-none focus:ring-1 focus:ring-stone-400">
                     Start Exploration
                   </button>
                 </motion.div>
@@ -410,9 +410,9 @@ export default function Sandbox() {
             </div>
 
             {/* GENERATED TAILWIND & REACT CODE */}
-            <div className="bg-[#0A0A0B] text-slate-300 p-6 rounded-2xl border border-purple-500/20 shadow-lg text-left flex flex-col relative">
-              <div className="flex items-center justify-between pb-3 border-b border-purple-500/10 mb-4">
-                <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 font-semibold">
+            <div className="bg-stone-50/90 dark:bg-[#0A0A0B] text-stone-700 dark:text-stone-300 p-6 rounded-2xl border border-stone-300/70 dark:border-stone-700/70 shadow-lg text-left flex flex-col relative">
+              <div className="flex items-center justify-between pb-3 border-b border-stone-300/70 dark:border-stone-700/70 mb-4">
+                <div className="flex items-center gap-2 text-xs font-mono text-stone-700 dark:text-stone-300 font-semibold">
                   <Code2 className="w-4 h-4" />
                   <span>OUTPUT CODE (REACT × TAILWIND)</span>
                 </div>

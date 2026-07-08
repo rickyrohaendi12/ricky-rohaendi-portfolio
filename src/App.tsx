@@ -59,13 +59,13 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <div className="bg-white text-slate-950 dark:bg-[#0A0A0B] dark:text-white min-h-screen text-sans select-text scroll-smooth antialiased transition-colors duration-300 relative overflow-hidden">
-        {/* Decorative Background Glows from Vibrant Palette */}
-        <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
-        <div className="absolute bottom-[-100px] right-[-100px] w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+      <div className="bg-stone-50 text-stone-800 dark:bg-[#0f1115] dark:text-stone-100 min-h-screen text-sans select-text scroll-smooth antialiased transition-colors duration-300 relative overflow-hidden">
+        {/* Decorative Background Glows with a softer editorial palette */}
+        <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-stone-300/35 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <div className="absolute bottom-[-100px] right-[-100px] w-[600px] h-[600px] bg-slate-400/20 rounded-full blur-[150px] pointer-events-none -z-10"></div>
 
         {/* EXTRA AMBIENT PULSING ACCENT */}
-        <div className="absolute top-[40%] right-[10%] w-[350px] h-[350px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse"></div>
+        <div className="absolute top-[40%] right-[10%] w-[350px] h-[350px] bg-slate-400/12 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse"></div>
 
         {/* GLOBAL HEADER BAR */}
         <Navbar activeSection={activeSection} onNavigate={handleNavigate} />

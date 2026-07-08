@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-transparent border-t border-purple-500/10 py-12 transition-colors">
+    <footer className="bg-transparent border-t border-stone-300/70 dark:border-stone-700/70 py-12 transition-colors">
       <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left select-none">
         {/* LEFT BRAND IDENTIFIER */}
         <div className="flex items-center gap-2">
@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="flex items-center gap-2 text-slate-500 font-mono text-[10px] uppercase tracking-wider">
           <Command className="w-3.5 h-3.5" />
           <span>Framer Animations (Motion) • Tailwind v4.0</span>
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+          <Sparkles className="w-3.5 h-3.5 text-stone-500 dark:text-stone-400 shrink-0" />
         </div>
       </div>
     </footer>
