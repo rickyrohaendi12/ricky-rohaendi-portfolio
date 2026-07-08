@@ -257,7 +257,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                           <div className="flex-1 space-y-1.5">
                             <div className="h-2.5 w-24 bg-stone-300/60 dark:bg-stone-700/50 rounded relative">
                               <div className="absolute -top-3.5 left-0 font-mono text-[7px] text-stone-500 dark:text-stone-400">
-                                UI/UX • Frontend
+                                UI/UX • Software Engineer
                               </div>
                             </div>
                             <div className="h-2 w-16 bg-stone-300/40 dark:bg-stone-700/35 rounded" />
