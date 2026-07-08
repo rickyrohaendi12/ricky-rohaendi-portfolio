@@ -280,13 +280,13 @@ export const SKILLS: Skill[] = [
   },
   {
     id: "motion-eng",
-    name: "Motion & Canvas Web Dev",
+    name: "Tailwind CSS & Motion Web Dev",
     category: "engineering",
     level: 88,
     icon: "Zap",
     description:
-      "Complex layout changes, hardware-accelerated animations, pixel manipulations, and coordinate mathematics.",
+      "Utility-first styling, responsive layouts, smooth animations, and polished UI transitions.",
     details:
-      "Using framer-motion (Motion) and native HTML Canvas APIs, I implement web animations that bypass main-thread bottlenecks and translate layouts seamlessly across viewports.",
+      "I combine Tailwind CSS with motion-driven interactions to build responsive interfaces with clean structure, consistent styling, and fluid user experiences.",
   },
 ];
