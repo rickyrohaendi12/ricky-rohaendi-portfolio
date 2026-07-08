@@ -52,7 +52,7 @@ export default function Projects() {
                 { id: "all", label: "All" },
                 { id: "ui-ux", label: "UI/UX Design" },
                 { id: "engineering", label: "Engineering" },
-                { id: "dual", label: "Dual-Stack" },
+                { id: "fullstack", label: "Full-Stack" },
               ] as const
             ).map((tab) => (
               <button

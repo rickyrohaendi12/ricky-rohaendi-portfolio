@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
   {
     id: "feelbox",
     title: "Feelsbox Indonesia - Design System Platform",
-    category: "dual",
+    category: "engineering",
     tags: ["Design System", "Laravel", "Figma", "Tailwind", "Motion"],
     description:
       "Feelsbox is a digital product focused on creating a simple and engaging user experience through modern UI/UX design and responsive web development.",
