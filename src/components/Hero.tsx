@@ -331,12 +331,28 @@ export default function Hero({ onNavigate }: HeroProps) {
                       <span className="text-pink-400">&gt;</span>
                     </div>
                     <div className="pl-12 text-slate-400">
-                      &lt;<span className="text-rose-400">Avatar</span> name=
-                      <span className="text-emerald-400">"Ricky"</span> size=
-                      <span className="text-amber-400">"10"</span> /&gt;
+                      &lt;<span className="text-rose-400">ProfileImage</span>{" "}
+                      src=
+                      <span className="text-emerald-400">
+                        "/img/ricky.jpg"
+                      </span>{" "}
+                      alt=
+                      <span className="text-emerald-400">
+                        "Ricky Rohaendi"
+                      </span>{" "}
+                      className=
+                      <span className="text-emerald-400">
+                        "w-full h-36 object-cover object-top"
+                      </span>{" "}
+                      /&gt;
                     </div>
                     <div className="pl-12 text-slate-400">
-                      &lt;<span className="text-rose-400">Content</span> /&gt;
+                      &lt;<span className="text-rose-400">ProfileMeta</span>{" "}
+                      role=
+                      <span className="text-emerald-400">
+                        "UI/UX • Software Engineer"
+                      </span>{" "}
+                      /&gt;
                     </div>
                     <div className="pl-8">
                       <span className="text-pink-400">&lt;/</span>
