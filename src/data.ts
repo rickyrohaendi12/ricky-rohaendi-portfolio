@@ -268,15 +268,15 @@ export const SKILLS: Skill[] = [
       "My codebases operate under strict compiler flags, utilizing clear generic utilities and structural typing definitions to completely eliminate runtime syntax crashes.",
   },
   {
-    id: "tailwind",
-    name: "Tailwind CSS Mastery",
+    id: "laravel-mysql",
+    name: "Laravel & MySQL",
     category: "engineering",
-    level: 85,
-    icon: "Wind",
+    level: 88,
+    icon: "Database",
     description:
-      "Utility frameworks, advanced layout structures, configuration layers, responsive presets, and style tokens.",
+      "Backend architecture, RESTful APIs, database design, migrations, and efficient data models.",
     details:
-      "I craft responsive web structures using container configurations, responsive layout prefixes, and clean CSS variables mapping, avoiding unmaintainable custom inline rules.",
+      "I build reliable Laravel applications with structured MySQL databases, clean APIs, and maintainable backend logic for scalable products.",
   },
   {
     id: "motion-eng",
