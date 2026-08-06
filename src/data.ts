@@ -32,6 +32,44 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: "travelgo",
+    title: "TravelGo - Tour & Travel Mobile App UI/UX Design",
+    category: "ui-ux",
+    tags: [
+      "Figma",
+      "Mobile App",
+      "UI Design",
+      "UX Research",
+      "Wireframe",
+      "Prototype",
+      "Design System",
+      "User Flow",
+    ],
+    description:
+      "A modern mobile UI/UX design for a tour and travel application that enables users to discover destinations, book trips, manage reservations, and complete secure online payments through an intuitive user experience.",
+    longDescription:
+      "TravelGo is a mobile application concept designed to simplify travel planning and booking. The project covers the complete UX process, starting from user research, information architecture, user flow, wireframing, and interactive prototyping to high-fidelity interface design. The application allows users to explore destinations, search flights and hotels, book tour packages, manage itineraries, make secure payments, and access digital booking confirmations. A consistent design system and responsive mobile interface were created to ensure an enjoyable and efficient user experience.",
+    image: "/img/Travelgo.png",
+    figmaUrl:
+      "https://www.figma.com/design/6x6Kk3D1teyUEB7mjTdHqF/Tour---Travel?node-id=74-8&p=f&t=shQZ3kVMLEHKgrxN-0",
+    githubUrl: "#",
+    liveUrl:
+      "https://www.figma.com/proto/6x6Kk3D1teyUEB7mjTdHqF/Tour---Travel?node-id=77-1512&t=shQZ3kVMLEHKgrxN-0&scaling=contain&content-scaling=fixed&page-id=74%3A8&starting-point-node-id=74%3A9",
+    metrics: [
+      { label: "Platform", value: "Mobile Application" },
+      { label: "Design Process", value: "End-to-End UX" },
+      { label: "Prototype", value: "Interactive High-Fidelity" },
+    ],
+    deliverables: [
+      "Conducted UX research to understand user needs, travel booking behavior, and pain points",
+      "Created user personas, user journey maps, information architecture, and user flows",
+      "Designed low-fidelity wireframes and interactive high-fidelity prototypes using Figma",
+      "Developed a scalable design system including typography, color palette, icons, spacing, and reusable UI components",
+      "Designed key booking experiences including destination search, package details, hotel and flight booking, payment, and booking confirmation",
+      "Created responsive mobile interfaces with a focus on usability, accessibility, and consistency across the application",
+    ],
+  },
+  {
     id: "vacationdotcom",
     title: "VacationDotCom - Fullstack Development",
     category: "fullstack",
