@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: portfolio-prod
+resources:
+  - namespace.yaml
+  - ../../base
+  - pdb.yaml
+  - hpa.yaml
+replicas:
+  - name: portfolio
+    count: 2
+# Prod: image dari GHCR. Nanti tag diganti ke sha-xxxxxxx oleh CI/GitOps,
+# karena tag "latest" tidak bisa dilacak dan sulit di-rollback.
+images:
+  - name: ricky-rohaendi-portfolio
+    newName: ghcr.io/rickyrohaendi12/ricky-rohaendi-portfolio
+    newTag: latest
