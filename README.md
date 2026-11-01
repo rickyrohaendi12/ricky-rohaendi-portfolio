@@ -6,7 +6,7 @@ Welcome to my personal portfolio website! This project showcases my journey as a
 
 🌐 **Live Website:** [ricky-rohaendi-portfolio.vercel.app](https://ricky-rohaendi-portfolio.vercel.app)
 
-> This repository is also my **DevOps playground**: the site is containerized, built and scanned by a CI/CD pipeline, and published as a public image. Kubernetes and Infrastructure as Code are next on the roadmap (see below).
+> This repository is also my **DevOps playground**: the site is containerized, built and scanned by a CI/CD pipeline, published as a public image, and described with Kubernetes manifests that are validated on every PR. Infrastructure as Code is next on the roadmap (see below).
 
 ## ✨ About
 
@@ -20,14 +20,16 @@ This portfolio was built to represent who I am, what I create, and how I solve p
 
 ## 🛠️ Tech Stack
 
-| Layer     | Technology                                             |
-| --------- | ------------------------------------------------------ |
-| Frontend  | React, TypeScript, Vite, Tailwind CSS, Framer Motion   |
-| Hosting   | Vercel (live site)                                     |
-| Container | Docker (multi-stage), Nginx unprivileged               |
-| CI/CD     | GitHub Actions                                         |
-| Security  | Trivy (image scan), Gitleaks (secret scan), Dependabot |
-| Registry  | GitHub Container Registry (GHCR)                       |
+| Layer         | Technology                                             |
+| ------------- | ------------------------------------------------------ |
+| Frontend      | React, TypeScript, Vite, Tailwind CSS, Framer Motion   |
+| Hosting       | Vercel (live site)                                     |
+| Container     | Docker (multi-stage), Nginx unprivileged               |
+| Orchestration | Kubernetes manifests with Kustomize (dev and prod)     |
+| CI/CD         | GitHub Actions                                         |
+| Security      | Trivy (image scan), Gitleaks (secret scan), Dependabot |
+| Validation    | kubeconform (Kubernetes manifest schema check)         |
+| Registry      | GitHub Container Registry (GHCR)                       |
 
 ## 🎨 Features
 
@@ -55,8 +57,10 @@ flowchart LR
   GH --> CI[GitHub Actions]
   CI --> T[Lint + Typecheck + Build]
   CI --> S[Gitleaks]
+  CI --> K[Kustomize build + kubeconform]
   T --> D[Docker build]
   S --> D
+  K --> D
   D --> V[Trivy scan]
   V -->|pass, main only| R[(GHCR image)]
   R --> Run[Container: Nginx :8080]
@@ -67,8 +71,9 @@ flowchart LR
 
 1. **test**: `npm ci`, lint, `tsc --noEmit`, tests, build.
 2. **secret-scan**: Gitleaks scans the full commit history.
-3. **docker**: builds the image, scans it with Trivy (fails on fixable HIGH/CRITICAL findings), and pushes to GHCR only on `main`.
-4. **Dependabot** opens weekly PRs for npm, Docker, and GitHub Actions dependencies.
+3. **k8s-validate**: renders every Kustomize overlay with `kubectl kustomize` and validates the output against Kubernetes schemas with `kubeconform`.
+4. **docker**: runs only after the three jobs above pass. It builds the image, scans it with Trivy (fails on fixable HIGH/CRITICAL findings), and pushes to GHCR only on `main`.
+5. **Dependabot** opens weekly PRs for npm, Docker, and GitHub Actions dependencies.
 
 ### Run with Docker
 
@@ -90,6 +95,19 @@ npm ci
 npm run dev
 ```
 
+### Kubernetes
+
+Manifests live in `k8s/` and are managed with Kustomize, with separate `dev` and `prod` overlays.
+
+Render an overlay locally:
+
+```bash
+kubectl kustomize k8s/overlays/dev
+kubectl kustomize k8s/overlays/prod
+```
+
+CI renders both overlays and validates them with kubeconform on every PR, so a broken manifest blocks the image push.
+
 ### Technical decisions
 
 - **Multi-stage build:** the final image contains only Nginx and the static build output, with no Node.js and no source code, keeping it small and reducing the attack surface.
@@ -97,17 +115,19 @@ npm run dev
 - **Layer caching:** dependencies are installed in a separate stage so rebuilds stay fast.
 - **Health endpoint:** `/health` is used by the Docker `HEALTHCHECK` and is ready for orchestrator probes.
 - **No secrets in the image:** this site needs no API keys at build or run time.
+- **Manifests are validated before shipping:** the image is only built and pushed after the Kubernetes overlays render and pass schema validation.
 
 ### Roadmap
 
 - [x] Dockerfile, Nginx config, and docker-compose
 - [x] CI pipeline with Gitleaks and Trivy
 - [x] Dependabot
-- [ ] Kubernetes manifests with Kustomize (Deployment, Service, Ingress, HPA, PDB)
+- [x] Kubernetes manifests with Kustomize (dev and prod overlays)
+- [x] Manifest validation in CI (kubectl kustomize + kubeconform)
 - [ ] Terraform: local cluster (kind) + ingress-nginx + ArgoCD + monitoring
 - [ ] GitOps deployment with ArgoCD
 - [ ] Observability with Prometheus and Grafana
-- [ ] IaC and manifest validation in CI (terraform validate, kubeconform, tfsec)
+- [ ] IaC validation in CI (terraform validate, tfsec)
 
 ## 📬 Contact
 
