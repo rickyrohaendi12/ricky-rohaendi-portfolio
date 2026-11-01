@@ -114,16 +114,16 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "ricky-rohaendi-portfolio",
-    title: "ricky-rohaendi-portfolio - Frontend & API Development",
+    id: "vibeliners",
+    title: "VibeLiners - Frontend & API Development",
     category: "engineering",
     tags: ["React", "TypeScript", "Music", "Responsive Desktop"],
     description:
-      "ricky-rohaendi-portfolio is a modern landing page project focused on delivering a visually engaging and responsive user experience through clean UI design and interactive web development.",
+      "VibeLiners is a modern landing page project focused on delivering a visually engaging and responsive user experience through clean UI design and interactive web development.",
     longDescription:
-      "ricky-rohaendi-portfolio is a web-based landing page project designed to present a bold and modern digital experience with a strong visual identity. The project focused on creating an intuitive user flow, clean interface layouts, and responsive interactions across desktop and mobile devices. Starting from UI exploration in Figma to front-end implementation, the goal was to combine visual consistency, usability, and engaging web interactions to create a seamless and memorable user experience. The development process involved translating design concepts into React components, implementing interactive data visualizations with Recharts and D3, and optimizing performance for smooth user interactions.",
-    image: "/img/ricky-rohaendi-portfolio.png",
-    githubUrl: "https://github.com/rickyrohaendi12/ricky-rohaendi-portfolio",
+      "VibeLiners is a web-based landing page project designed to present a bold and modern digital experience with a strong visual identity. The project focused on creating an intuitive user flow, clean interface layouts, and responsive interactions across desktop and mobile devices. Starting from UI exploration in Figma to front-end implementation, the goal was to combine visual consistency, usability, and engaging web interactions to create a seamless and memorable user experience. The development process involved translating design concepts into React components, implementing interactive data visualizations with Recharts and D3, and optimizing performance for smooth user interactions.",
+    image: "/img/vibeliners.png",
+    githubUrl: "https://github.com/rickyrohaendi12/VibeLiners",
     liveUrl: "https://vibe-liners.vercel.app/",
     metrics: [
       { label: "Responsive UX Coverage", value: "100%" },
