@@ -1,11 +1,7 @@
 services:
   web:
-    build:
-      context: .
-      args:
-        # Dibaca dari file .env lokal (jangan di-commit)
-        GEMINI_API_KEY: ${GEMINI_API_KEY:-}
-    image: vibeliners:local
+    build: .
+    image: ricky-rohaendi-portfolio:local
     ports:
       - "8080:8080"
     restart: unless-stopped
