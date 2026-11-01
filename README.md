@@ -1,4 +1,4 @@
-# 🎵 VibeLiners
+# 🎵 ricky-rohaendi-portfolio
 
 Pemutar musik emotif yang mengubah seluruh tampilan (warna, font, animasi) berdasarkan mood atau genre. Mood bisa ditulis bebas dan dianalisis oleh Gemini AI.
 
@@ -8,14 +8,14 @@ Pemutar musik emotif yang mengubah seluruh tampilan (warna, font, animasi) berda
 
 ## Stack
 
-| Lapisan | Teknologi |
-|---|---|
-| Aplikasi | React, TypeScript, Vite, Tailwind CSS, Framer Motion |
-| AI | Google Gemini |
-| Container | Docker (multi-stage), Nginx unprivileged |
-| CI/CD | GitHub Actions |
-| Keamanan | Trivy (image scan), Gitleaks (secret scan), Dependabot |
-| Registry | GitHub Container Registry (GHCR) |
+| Lapisan   | Teknologi                                              |
+| --------- | ------------------------------------------------------ |
+| Aplikasi  | React, TypeScript, Vite, Tailwind CSS, Framer Motion   |
+| AI        | Google Gemini                                          |
+| Container | Docker (multi-stage), Nginx unprivileged               |
+| CI/CD     | GitHub Actions                                         |
+| Keamanan  | Trivy (image scan), Gitleaks (secret scan), Dependabot |
+| Registry  | GitHub Container Registry (GHCR)                       |
 
 ## Arsitektur
 

@@ -14,11 +14,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Catatan: variabel di aplikasi Vite ikut tertanam di bundle JS (terlihat publik).
-# Gunakan hanya untuk demo; untuk produksi pindahkan panggilan Gemini ke backend proxy.
-ARG GEMINI_API_KEY=""
-ENV GEMINI_API_KEY=$GEMINI_API_KEY
-
 RUN npm run build
 
 # ---------- Stage 3: runtime ----------
