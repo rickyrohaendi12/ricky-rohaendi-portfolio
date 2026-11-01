@@ -1,62 +1,73 @@
-# 🚀 Ricky Rohaendi — Portfolio Website
+# 🎵 VibeLiners
 
-Welcome to my personal portfolio website!
-This project showcases my journey as a developer & designer through modern web experiences, UI/UX exploration, and real-world projects.
+Pemutar musik emotif yang mengubah seluruh tampilan (warna, font, animasi) berdasarkan mood atau genre. Mood bisa ditulis bebas dan dianalisis oleh Gemini AI.
 
-🌐 Live Website: [Ricky Rohaendi Portfolio](https://ricky-rohaendi-portfolio.vercel.app)
+**Demo:** https://vibe-liners.vercel.app
 
-## ✨ About
+> Repo ini juga berfungsi sebagai **portfolio DevOps**: aplikasi di-container-kan, di-build dan di-scan otomatis lewat CI/CD, lalu dipublikasikan sebagai image di GitHub Container Registry.
 
-This portfolio was built to represent who I am, what I create, and how I solve problems through technology and design.
-Inside this website, you’ll find:
+## Stack
 
-- Personal introduction
-- Selected projects & case studies
-- UI/UX design explorations
-- Skills & technologies
-- Contact information
+| Lapisan | Teknologi |
+|---|---|
+| Aplikasi | React, TypeScript, Vite, Tailwind CSS, Framer Motion |
+| AI | Google Gemini |
+| Container | Docker (multi-stage), Nginx unprivileged |
+| CI/CD | GitHub Actions |
+| Keamanan | Trivy (image scan), Gitleaks (secret scan), Dependabot |
+| Registry | GitHub Container Registry (GHCR) |
 
-## 🛠️ Tech Stack
+## Arsitektur
 
-Built with modern technologies:
+```mermaid
+flowchart LR
+  Dev[Developer] -->|push / PR| GH[GitHub]
+  GH --> CI[GitHub Actions]
+  CI --> T[Lint + Typecheck + Build]
+  CI --> S[Gitleaks]
+  T --> D[Docker build]
+  S --> D
+  D --> V[Trivy scan]
+  V -->|lolos| R[(GHCR image)]
+  R --> Run[Container: Nginx :8080]
+  User[Pengguna] --> Run
+```
 
-- Next.js
-- React.js
-- Tailwind CSS
-- TypeScript
-- Framer Motion
-- Vercel Deployment
+## Pipeline CI/CD
 
-## 🎨 Features
+1. **test**: `npm ci`, lint, `tsc --noEmit`, test, build.
+2. **secret-scan**: Gitleaks memeriksa seluruh riwayat commit.
+3. **docker**: build image, scan dengan Trivy (gagal jika ada CRITICAL/HIGH yang punya perbaikan), lalu push ke GHCR hanya pada branch `main`.
+4. **Dependabot** membuat PR mingguan untuk npm, Docker, dan GitHub Actions.
 
-- Responsive modern UI
-- Smooth animations & transitions
-- Clean and minimal design
-- Optimized performance
-- Mobile-friendly experience
+## Menjalankan dengan Docker
 
-## 📂 Projects Highlight
+```bash
+cp .env.example .env        # isi GEMINI_API_KEY
+docker compose up --build
+# buka http://localhost:8080
+```
 
-Some featured works included in this portfolio:
+Health check: `curl http://localhost:8080/health`
 
-- E-Commerce Design
-- Tour & Travel Project
-- UI/UX Exploration
-- Web Development Projects
-- Creative Landing Pages
+## Menjalankan tanpa Docker
 
-## 📬 Contact
+```bash
+npm ci
+npm run dev
+```
 
-Feel free to connect or collaborate with me:
+## Keputusan teknis
 
-- Email: rickyrohaendi1@gmail.com
-- LinkedIn: https://www.linkedin.com/in/ricky-rohaendi/
-- GitHub: https://github.com/rickyrohaendi12
+- **Multi-stage build**: image akhir hanya berisi Nginx dan file statis, tanpa Node.js dan source code, sehingga kecil dan permukaan serangannya sempit.
+- **Non-root + read-only filesystem**: container berjalan sebagai user non-root, `cap_drop: ALL`, dan `no-new-privileges`.
+- **Cache layer**: dependency di-install di stage terpisah agar build ulang cepat.
+- **Catatan keamanan**: API key Gemini yang dipakai di frontend Vite tertanam di bundle. Rencana perbaikan: pindahkan panggilan Gemini ke backend proxy dan simpan key sebagai secret server.
 
-## 📌 Note
+## Roadmap
 
-This portfolio will continue to evolve as I learn, build, and explore new technologies.
-
----
-
-⭐ If you like this project, feel free to give it a star and support my journey!
+- [ ] Backend proxy untuk Gemini (secret tidak lagi di browser)
+- [ ] Infrastructure as Code (Terraform) untuk deploy ke Cloud Run / ECS
+- [ ] Monitoring (Prometheus + Grafana atau uptime check)
+- [ ] Deploy otomatis (CD) dari image GHCR
+- [ ] Kubernetes + ArgoCD (opsional)
