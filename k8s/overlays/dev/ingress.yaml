@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio
+  labels:
+    app.kubernetes.io/name: portfolio
+    app.kubernetes.io/part-of: ricky-rohaendi-portfolio
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: portfolio.localtest.me
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio
+                port:
+                  name: http

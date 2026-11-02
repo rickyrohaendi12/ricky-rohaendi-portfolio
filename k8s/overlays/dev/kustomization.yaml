@@ -4,6 +4,7 @@ namespace: portfolio-dev
 resources:
   - namespace.yaml
   - ../../base
+  - ingress.yaml
 # Dev: image dibangun lokal lalu dimuat ke kind (kind load docker-image).
 images:
   - name: ricky-rohaendi-portfolio
