@@ -27,3 +27,9 @@ variable "traefik_chart_version" {
   description = "Version of the Traefik Helm chart."
   default     = "42.1.3"
 }
+
+variable "argocd_chart_version" {
+  type        = string
+  description = "Version of the Argo CD Helm chart."
+  default     = "10.11.6"
+}
