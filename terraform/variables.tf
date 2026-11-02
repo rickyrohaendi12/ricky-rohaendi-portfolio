@@ -21,3 +21,9 @@ variable "https_host_port" {
   description = "Host port mapped to the ingress controller HTTPS port."
   default     = 443
 }
+
+variable "traefik_chart_version" {
+  type        = string
+  description = "Version of the Traefik Helm chart."
+  default     = "42.1.3"
+}

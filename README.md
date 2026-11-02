@@ -124,7 +124,7 @@ CI renders both overlays and validates them with kubeconform on every PR, so a b
 - [x] Dependabot
 - [x] Kubernetes manifests with Kustomize (dev and prod overlays)
 - [x] Manifest validation in CI (kubectl kustomize + kubeconform)
-- [ ] Terraform: local cluster (kind) + ingress-nginx + ArgoCD + monitoring
+- [x] Terraform: local cluster (kind) + ingress-nginx + ArgoCD + monitoring
 - [ ] GitOps deployment with ArgoCD
 - [ ] Observability with Prometheus and Grafana
 - [ ] IaC validation in CI (terraform validate, tfsec)
