@@ -21,7 +21,9 @@ resource "helm_release" "traefik" {
       }
 
       service = {
-        type = "ClusterIP"
+        spec = {
+          type = "ClusterIP"
+        }
       }
 
       # Run on the control-plane node, the one that has the host port mappings.
