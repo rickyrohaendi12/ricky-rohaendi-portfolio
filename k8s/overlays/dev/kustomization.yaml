@@ -10,3 +10,7 @@ images:
   - name: ricky-rohaendi-portfolio
     newName: ricky-rohaendi-portfolio
     newTag: local
+
+replicas:
+  - name: portfolio
+    count: 2
