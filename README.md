@@ -130,7 +130,7 @@ CI renders both overlays and validates them with kubeconform on every PR, so a b
 - [ ] Observability with Prometheus and Grafana
 - [ ] GitOps deployment with ArgoCD
 - [ ] Observability with Prometheus and Grafana
-- [ ] IaC validation in CI (terraform validate, tfsec)
+- [x] IaC validation in CI (terraform fmt/validate + Trivy config)
 
 ## 📬 Contact
 
