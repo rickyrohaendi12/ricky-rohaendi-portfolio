@@ -126,6 +126,8 @@ jobs:
           context: .
           load: true
           tags: ricky-rohaendi-portfolio:scan
+          # Re-run `apk upgrade` on every build so the scan sees current packages
+          no-cache-filters: runtime
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
