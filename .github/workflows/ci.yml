@@ -67,6 +67,37 @@ jobs:
             echo "::endgroup::"
           done
 
+  terraform-validate:
+    name: Validate Terraform
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.16.6
+
+      - name: Format check
+        working-directory: terraform
+        run: terraform fmt -check -recursive -diff
+
+      - name: Init (no backend)
+        working-directory: terraform
+        run: terraform init -backend=false -input=false
+
+      - name: Validate
+        working-directory: terraform
+        run: terraform validate
+
+      - name: IaC scan (Trivy config)
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: config
+          scan-ref: terraform
+          format: table
+          severity: CRITICAL,HIGH
+          exit-code: "1"
+
   docker:
     name: Build, scan, push image
     runs-on: ubuntu-latest
