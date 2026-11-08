@@ -20,9 +20,29 @@ resource "helm_release" "traefik" {
         websecure = { hostPort = 443 }
       }
 
+      # kind has no LoadBalancer provider, so keep the Service cluster-internal.
       service = {
         spec = {
           type = "ClusterIP"
+        }
+      }
+
+      # Publish a fixed address on Ingress objects. Without it Argo CD
+      # reports Ingress resources as Progressing forever on kind.
+      providers = {
+        kubernetesIngress = {
+          publishedService = { enabled = false }
+          ingressEndpoint  = { ip = "127.0.0.1" }
+        }
+      }
+
+      # Single replica bound to hostPort 80/443: stop the old pod first,
+      # otherwise the new pod cannot be scheduled on the same node.
+      updateStrategy = {
+        type = "RollingUpdate"
+        rollingUpdate = {
+          maxUnavailable = 1
+          maxSurge       = 0
         }
       }
 
