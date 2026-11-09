@@ -83,10 +83,6 @@ jobs:
 
       - name: Init (no backend)
         working-directory: terraform
-        run: terraform init -backend=false -input=false
-
-      - name: Init (no backend)
-        working-directory: terraform
         run: |
           for attempt in 1 2 3; do
             terraform init -backend=false -input=false && exit 0
