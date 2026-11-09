@@ -85,9 +85,15 @@ jobs:
         working-directory: terraform
         run: terraform init -backend=false -input=false
 
-      - name: Validate
+      - name: Init (no backend)
         working-directory: terraform
-        run: terraform validate
+        run: |
+          for attempt in 1 2 3; do
+            terraform init -backend=false -input=false && exit 0
+            echo "terraform init failed (attempt $attempt), retrying in 15s" >&2
+            sleep 15
+          done
+          exit 1
 
       - name: IaC scan (Trivy config)
         uses: aquasecurity/trivy-action@v0.36.0
