@@ -45,17 +45,48 @@ jobs:
   k8s-validate:
     name: Validate Kubernetes manifests
     runs-on: ubuntu-latest
+    env:
+      KUBECONFORM_VERSION: v0.6.7
+      # Cocokkan dengan file CHECKSUMS di halaman rilis v0.6.7 sebelum dipercaya.
+      KUBECONFORM_SHA256: 95f14e87aa28c09d5941f11bd024c1d02fdc0303ccaa23f61cef67bc92619d73
+      K8S_VERSION: 1.30.0
     steps:
       - uses: actions/checkout@v7
 
+      - name: Cache kubeconform binary
+        id: kc-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/bin/kubeconform
+          key: kubeconform-${{ env.KUBECONFORM_VERSION }}-linux-amd64
+
       - name: Install kubeconform
+        if: steps.kc-cache.outputs.cache-hit != 'true'
         run: |
-          curl -sSL https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz | tar -xz kubeconform
-          sudo mv kubeconform /usr/local/bin/
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            --retry 5 --retry-all-errors --retry-delay 5 \
+            -o kubeconform.tar.gz \
+            "https://github.com/yannh/kubeconform/releases/download/${KUBECONFORM_VERSION}/kubeconform-linux-amd64.tar.gz"
+          echo "${KUBECONFORM_SHA256}  kubeconform.tar.gz" | sha256sum -c -
+          mkdir -p ~/.local/bin
+          tar -xzf kubeconform.tar.gz -C ~/.local/bin kubeconform
+
+      - name: Add kubeconform to PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Cache kubeconform schemas
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/kubeconform
+          key: kubeconform-schemas-${{ env.K8S_VERSION }}-${{ hashFiles('k8s/**') }}
+          restore-keys: |
+            kubeconform-schemas-${{ env.K8S_VERSION }}-
 
       - name: Build and validate overlays
         run: |
           set -euo pipefail
+          mkdir -p "$HOME/.cache/kubeconform"
           mapfile -t dirs < <(find k8s -name kustomization.yaml -path '*overlays*' -exec dirname {} \;)
           if [ "${#dirs[@]}" -eq 0 ]; then
             echo "No kustomize overlays found under k8s/" >&2
@@ -63,13 +94,16 @@ jobs:
           fi
           for dir in "${dirs[@]}"; do
             echo "::group::$dir"
-            kubectl kustomize "$dir" | kubeconform -strict -summary -ignore-missing-schemas -kubernetes-version 1.30.0
+            kubectl kustomize "$dir" | kubeconform -strict -summary -ignore-missing-schemas \
+              -cache "$HOME/.cache/kubeconform" -kubernetes-version "$K8S_VERSION"
             echo "::endgroup::"
           done
 
   terraform-validate:
     name: Validate Terraform
     runs-on: ubuntu-latest
+    env:
+      TF_PLUGIN_CACHE_DIR: ${{ github.workspace }}/.terraform-plugin-cache
     steps:
       - uses: actions/checkout@v7
 
@@ -77,11 +111,20 @@ jobs:
         with:
           terraform_version: 1.16.6
 
+      - name: Cache Terraform providers
+        uses: actions/cache@v4
+        with:
+          path: .terraform-plugin-cache
+          key: terraform-providers-${{ hashFiles('terraform/.terraform.lock.hcl') }}
+
+      - name: Prepare plugin cache directory
+        run: mkdir -p "$TF_PLUGIN_CACHE_DIR"
+
       - name: Format check
         working-directory: terraform
         run: terraform fmt -check -recursive -diff
 
-      - name: Init (no backend)
+      - name: Init (no backend, with retry)
         working-directory: terraform
         run: |
           for attempt in 1 2 3; do
@@ -90,6 +133,10 @@ jobs:
             sleep 15
           done
           exit 1
+
+      - name: Validate
+        working-directory: terraform
+        run: terraform validate
 
       - name: IaC scan (Trivy config)
         uses: aquasecurity/trivy-action@v0.36.0
