@@ -3,6 +3,13 @@ name: CI/CD
 on:
   push:
     branches: [main]
+    # Perubahan yang tidak memengaruhi image tidak perlu memicu build baru.
+    # Ini juga memutus loop: merge PR promosi hanya menyentuh k8s/.
+    paths-ignore:
+      - "k8s/**"
+      - "terraform/**"
+      - "docs/**"
+      - "**.md"
   pull_request:
     branches: [main]
 
@@ -204,3 +211,60 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
+
+  promote:
+    name: Promote image to dev (open PR)
+    runs-on: ubuntu-latest
+    needs: docker
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+    steps:
+      - name: Check promotion token
+        id: guard
+        env:
+          PROMOTE_TOKEN: ${{ secrets.PROMOTE_TOKEN }}
+        run: |
+          if [ -z "$PROMOTE_TOKEN" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::PROMOTE_TOKEN secret is not set, skipping promotion"
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Token khusus (bukan GITHUB_TOKEN) supaya PR yang dibuat memicu workflow CI.
+      - uses: actions/checkout@v7
+        if: steps.guard.outputs.enabled == 'true'
+        with:
+          token: ${{ secrets.PROMOTE_TOKEN }}
+
+      - name: Update dev image tag and open PR
+        if: steps.guard.outputs.enabled == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.PROMOTE_TOKEN }}
+        run: |
+          set -euo pipefail
+          TAG="sha-${GITHUB_SHA::7}"
+          BRANCH="promote/dev-${TAG}"
+          FILE="k8s/overlays/dev/kustomization.yaml"
+
+          sed -i -E "s|^([[:space:]]*newTag:[[:space:]]*).*|\1${TAG}|" "$FILE"
+          grep -q "newTag: ${TAG}" "$FILE"
+
+          if git diff --quiet; then
+            echo "Dev overlay already uses ${TAG}, nothing to do."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add "$FILE"
+          git commit -m "chore(dev): promote image to ${TAG}"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "chore(dev): promote image to ${TAG}" \
+            --body "Automated promotion of the dev overlay to image tag ${TAG} (commit ${GITHUB_SHA}). Merging this lets Argo CD roll the new image out to the dev cluster."

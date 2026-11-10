@@ -8,8 +8,8 @@ resources:
 # Dev: image dibangun lokal lalu dimuat ke kind (kind load docker-image).
 images:
   - name: ricky-rohaendi-portfolio
-    newName: ricky-rohaendi-portfolio
-    newTag: local
+    newName: ghcr.io/rickyrohaendi12/ricky-rohaendi-portfolio
+    newTag: sha-637b668
 
 replicas:
   - name: portfolio
