@@ -68,6 +68,8 @@ flowchart LR
   K --> D
   D --> V[Trivy image scan]
   V -->|pass, main only| R[(GHCR image)]
+  R -->|open PR| P[Promote PR: bump dev tag]
+  P -.->|merge| GH
   TFA[Terraform apply] --> C[kind cluster + Traefik + Argo CD]
   GH -.->|k8s/overlays/dev| A[Argo CD]
   A -->|sync| C
@@ -80,7 +82,8 @@ flowchart LR
 3. **k8s-validate**: renders every Kustomize overlay with `kubectl kustomize` and validates the output against Kubernetes schemas with `kubeconform`.
 4. **terraform-validate**: `terraform fmt -check`, `terraform init` (with retry), `terraform validate`, and a Trivy config scan of the Terraform code.
 5. **docker**: runs after `test`, `secret-scan`, and `k8s-validate` pass. It builds the image, scans it with Trivy (fails on fixable HIGH/CRITICAL findings), and pushes to GHCR only on `main`.
-6. **Dependabot** opens weekly PRs for npm, Docker, and GitHub Actions dependencies.
+6. **promote**: after a successful image push on `main`, opens a PR that bumps the image tag in the `dev` overlay to the new `sha-xxxxxxx`. Merging it lets Argo CD sync the cluster.
+7. **Dependabot** opens weekly PRs for npm, Docker, and GitHub Actions dependencies.
 
 ### Run with Docker
 
@@ -170,7 +173,7 @@ kubectl -n monitoring port-forward svc/kube-prometheus-stack-grafana 3000:80
 - [x] GitOps: Argo CD Application for the dev overlay
 - [x] IaC validation in CI (terraform fmt and validate + Trivy config)
 - [x] Observability with Prometheus and Grafana
-- [ ] Automated image tag promotion (CI updates the Kustomize tag, Argo CD syncs)
+- [x] Automated image tag promotion (CI updates the Kustomize tag, Argo CD syncs)
 - [ ] Pin GitHub Actions to commit SHAs (supply-chain hardening)
 
 ## 📬 Contact
