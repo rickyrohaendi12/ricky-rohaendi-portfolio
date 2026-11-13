@@ -62,7 +62,7 @@ jobs:
 
       - name: Cache kubeconform binary
         id: kc-cache
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.local/bin/kubeconform
           key: kubeconform-${{ env.KUBECONFORM_VERSION }}-linux-amd64
@@ -83,7 +83,7 @@ jobs:
         run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Cache kubeconform schemas
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/kubeconform
           key: kubeconform-schemas-${{ env.K8S_VERSION }}-${{ hashFiles('k8s/**') }}
@@ -119,7 +119,7 @@ jobs:
           terraform_version: 1.16.6
 
       - name: Cache Terraform providers
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .terraform-plugin-cache
           key: terraform-providers-${{ hashFiles('terraform/.terraform.lock.hcl') }}
