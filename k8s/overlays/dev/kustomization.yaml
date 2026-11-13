@@ -9,7 +9,7 @@ resources:
 images:
   - name: ricky-rohaendi-portfolio
     newName: ghcr.io/rickyrohaendi12/ricky-rohaendi-portfolio
-    newTag: sha-637b668
+    newTag: sha-a993e6d
 
 replicas:
   - name: portfolio
