@@ -171,7 +171,7 @@ kubectl -n monitoring port-forward svc/kube-prometheus-stack-grafana 3000:80
 - [x] IaC validation in CI (terraform fmt and validate + Trivy config)
 - [x] Observability with Prometheus and Grafana
 - [ ] Automated image tag promotion (CI updates the Kustomize tag, Argo CD syncs)
-- [ ] Pin GitHub Actions to commit SHAs (supply-chain hardening)
+- [x] Pin GitHub Actions to commit SHAs (supply-chain hardening)
 
 ## 📬 Contact
 
