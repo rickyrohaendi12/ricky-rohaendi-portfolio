@@ -170,7 +170,7 @@ kubectl -n monitoring port-forward svc/kube-prometheus-stack-grafana 3000:80
 - [x] GitOps: Argo CD Application for the dev overlay
 - [x] IaC validation in CI (terraform fmt and validate + Trivy config)
 - [x] Observability with Prometheus and Grafana
-- [ ] Automated image tag promotion (CI updates the Kustomize tag, Argo CD syncs)
+- [x] Automated image tag promotion (CI updates the Kustomize tag, Argo CD syncs)
 - [x] Pin GitHub Actions to commit SHAs (supply-chain hardening)
 
 ## 📬 Contact
