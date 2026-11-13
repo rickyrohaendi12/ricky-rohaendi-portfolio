@@ -24,7 +24,10 @@ FROM nginxinc/nginx-unprivileged:1.31-alpine AS runtime
 
 # Perbarui paket sistem agar kerentanan yang sudah punya perbaikan tertambal.
 USER root
-RUN apk upgrade --no-cache
+# Diisi CI dengan tanggal hari ini supaya layer ini tidak memakai cache lama
+# dan patch keamanan terbaru dari repositori Alpine selalu terambil.
+ARG APK_REFRESH=manual
+RUN echo "apk refresh: ${APK_REFRESH}" && apk upgrade --no-cache
 USER 101
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf

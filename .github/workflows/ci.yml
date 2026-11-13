@@ -167,6 +167,12 @@ jobs:
 
       - uses: docker/setup-buildx-action@v3
 
+      # Nilai ini berubah tiap hari UTC, sehingga layer "apk upgrade" di Dockerfile
+      # tidak memakai cache basi dan patch keamanan terbaru selalu terambil.
+      - name: Daily cache-bust value
+        id: today
+        run: echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
       - name: Metadata (tag & label)
         id: meta
         uses: docker/metadata-action@v5
@@ -180,6 +186,8 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          build-args: |
+            APK_REFRESH=${{ steps.today.outputs.date }}
           load: true
           tags: ricky-rohaendi-portfolio:scan
           cache-from: type=gha
@@ -207,6 +215,8 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          build-args: |
+            APK_REFRESH=${{ steps.today.outputs.date }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
