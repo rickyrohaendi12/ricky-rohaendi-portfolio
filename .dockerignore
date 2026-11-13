@@ -13,3 +13,6 @@ README.md
 .vscode
 .idea
 coverage
+terraform
+k8s
+docs
